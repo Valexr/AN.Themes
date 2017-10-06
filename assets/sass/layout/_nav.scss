@@ -7,7 +7,7 @@
 		display: block;
 		position: fixed;
 	    overflow: hidden;
-	    z-index: 1000;
+	    z-index: 0;
 	    top: 0;
 	    right: 0;
 	    bottom: 0;
@@ -16,7 +16,7 @@
 	    opacity: 0;
 	    @include vendor('transition', ('opacity #{_duration(nav)} ease'));
 
-	    &.visible {opacity: 0.7}
+	    &.visible {opacity: 0.7; z-index:1000}
 	}
 	#nav {
 		@include vendor('transform', 'translateX(20em)');
