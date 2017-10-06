@@ -85,6 +85,8 @@
 		    }
 		}
     	.banner-title {position: absolute; bottom: 5em; z-index: 1;
+    		hr {margin-bottom: 1.25em}
+    		h2 {line-height: 1.25em}
     		@include breakpoint(small) {bottom: 0; padding: 4em}
     	}
     	.banner-footer {position: absolute; width: 100%; bottom: 2em; display: none; z-index: 1;
