@@ -1,0 +1,54 @@
+// skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
+
+/* Footer */
+
+	#footer {
+		@include padding(4em, 0);
+		h4 {margin: 0;
+			.artists-page & {color: _palette(bg)}
+		}
+		p {
+			.artists-page & {color: _palette(bg)}
+		}
+		a {color: _palette(fg); text-decoration: none;
+			&:hover {opacity: 0.7}
+			.artists-page & {color: _palette(bg)}
+		}
+
+		.copyright {
+			color: _palette(fg);
+			font-size: 1.05em;
+			font-family: _font(family-xbold);
+			padding: 0;
+			text-align: center;
+			.artists-page & {color: _palette(bg)}
+
+			li {
+				border-left: solid _size(border-width) _palette(border);
+				display: inline-block;
+				list-style: none;
+				margin-left: 1.5em;
+				padding-left: 1.5em;
+
+				&:first-child {
+					border-left: 0;
+					margin-left: 0;
+					padding-left: 0;
+				}
+			}
+		}
+
+		@include breakpoint(small) {
+			@include padding(3em, 0);
+
+			.copyright {
+				li {
+					display: block;
+					border-left: 0;
+					margin-left: 0;
+					padding-left: 0;
+				}
+			}
+			div {text-align: center}
+		}
+	}

@@ -1,0 +1,11 @@
+.partners {
+	ul {list-style: none;}
+	li {display: inline-block;
+		&:hover {opacity: 0.7; cursor: pointer;
+			&:after {opacity: 0}
+		}
+		a {display: inline-block; max-height: 150px;
+			img {max-width: 100%; height: auto; max-height: 100px}
+		}
+	}
+}

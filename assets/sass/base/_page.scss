@@ -1,0 +1,43 @@
+// skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
+
+/* Basic */
+
+	// MSIE: Required for IEMobile.
+		@-ms-viewport {
+			width: device-width;
+		}
+
+	// MSIE: Prevents scrollbar from overlapping content.
+		body {
+			-ms-overflow-style: scrollbar;
+			@include vendor('transition', 'background-image #{_duration(nav)} ease-in-out');
+		}
+
+	// Ensures page width is always >=320px.
+		@include breakpoint(xsmall) {
+			html, body {
+				min-width: 320px;
+			}
+		}
+
+	body {
+		background: _palette(bg);
+
+		&.artists-page {
+			background-image: url(../../images/artists/artists-bg.jpg);
+    		background-repeat: no-repeat;
+		    background-position: center;
+    		background-size: cover;
+    		min-height: 100vh;
+		}
+
+		// Prevents animation/transition "flicker" on page load.
+		// Automatically added/removed by js/main.js.
+			&.is-loading {
+				*, *:before, *:after {
+					@include vendor('animation', 'none !important');
+					@include vendor('transition', 'none !important');
+				}
+			}
+
+	}

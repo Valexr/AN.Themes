@@ -1,0 +1,75 @@
+// skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
+
+/* Image */
+
+	.image {
+		// border-radius: _size(border-radius);
+		border: 0;
+		display: inline-block;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0; right: 0; bottom: 0; left: 0;
+			background: _palette(fg);
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			@include vendor("transition", "transform 1s ease");
+			@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+		}
+		&:hover {
+			&::after {opacity: 0.42}
+		}
+
+		img {
+			// border-radius: _size(border-radius);
+			display: block;
+			max-width: 100%;
+			height: auto;
+			position: relative;
+		}
+
+		&.left,
+		&.right {
+			max-width: 40%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&.left {
+			float: left;
+			padding: 0 1.5em 1em 0;
+			top: 0.25em;
+		}
+
+		&.right {
+			float: right;
+			padding: 0 0 1em 1.5em;
+			top: 0.25em;
+		}
+
+		&.fit {
+			display: block;
+			margin: 0 0 _size(element-margin) 0;
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&.main {
+			display: block;
+			margin: 0 0 (_size(element-margin) * 1.5) 0;
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+	}

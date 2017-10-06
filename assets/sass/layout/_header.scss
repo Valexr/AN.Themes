@@ -1,0 +1,139 @@
+// skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
+
+/* Header */
+
+	body {
+		// padding-top: 3.125em;
+	}
+
+	#header {
+		// background: _palette(bg);
+		color: _palette(fg);
+		cursor: default;
+		height: 6em;
+		left: 0;
+		line-height: 6em;
+		position: fixed;
+		text-align: right;
+		top: -100px;
+		width: 100%;
+		z-index: _misc(z-index-base) + 1;
+		@include vendor('transition', 'all #{_duration(nav)} ease-in-out');
+		@include breakpoint(small) {top: 0;}
+		&.sticky {top: 0; background: _palette(bg);
+			a[href="#nav"] {background-image: url(../../images/icon/burger.svg);}
+			.lg {opacity: 1}
+		}
+		.news-page &, .artists-page & {top: 0}
+		.artists-page & {background-color: transparent}
+		#header-nav {}
+
+		.lg {
+	    	background-image: url(../../images/icon/logo-b.svg);
+	    	background-position: center;
+	    	background-size: 60%;
+	    	background-repeat: no-repeat;
+    	    width: 80px;
+    		height: 80px;
+		    left: 2.5em;
+    		position: absolute;
+    		@include vendor('transition', 'all #{_duration(nav)} ease-in-out');
+    		@include breakpoint(small) {left: 1.5em; opacity: 0}
+    		@include breakpoint(xsmall) {left: 0.5em}
+    		.artists-page & {background-image: url(../../images/icon/logo-w.svg);}
+
+    		a {display: block; width: 80px; height: 80px;}
+    	}
+
+		> h1 {
+			color: _palette(fg);
+			font-family: _font(family-bold);
+			display: inline-block;
+			height: inherit;
+			left: 1.25em;
+			line-height: inherit;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 0;
+
+			a {
+				font-size: 1.25em;
+			}
+		}
+
+		> a {
+			@include vendor('transition', 'color #{_duration(transition)} ease-in-out');
+			display: inline-block;
+			padding: 0 0.75em;
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				color: _palette(fg-bold);
+			}
+
+			&[href="#nav"] {
+				background-image: url(../../images/icon/burger-w.svg);
+	    		background-repeat: no-repeat;
+    		    background-position: center right;
+    		    height: 80px;
+    		    width: 27px;
+			    position: absolute;
+			    right: 3.5em;
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+				&:hover {opacity: 0.7}
+				@include breakpoint(small) {right: 2.5em;}
+				@include breakpoint(xsmall) {right: 1.5em}
+				.artists-page & {background-image: url(../../images/icon/burger-w.svg);}
+			}
+
+			& + a[href="#nav"]:last-child {
+				// border-left: solid 1px _palette(accent2, border);
+				// padding-lef/t: 1.25em;
+				// margin-left: 0.5em;
+			}
+
+			&:last-child {
+				// padding-right: 1.25em;
+			}
+
+			@include breakpoint(small) {
+				padding: 0 0.5em;
+
+				& + a[href="#nav"]:last-child {
+					padding-left: 1em;
+					margin-left: 0.25em;
+				}
+
+				&:last-child {
+					// padding-right: 1em;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(medium) {
+		body {
+			// padding-top: 44px;
+		}
+
+		#header {
+			// height: 44px;
+			// line-height: 44px;
+
+			> h1 {
+				left: 1em;
+
+				a {
+					font-size: 1em;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(xsmall) {
+		#header {
+			min-width: 320px;
+		}
+	}

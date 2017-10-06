@@ -1,0 +1,23 @@
+// skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
+
+/* Main */
+
+	#main {
+		@include padding(4em, 0);
+
+		@include breakpoint(small) {
+			@include padding(3em, 0);
+		}
+		.home-page & {padding: 0}
+		.news-page & {@include padding(6em, 0);}
+		.artists-page & {min-height: 100vh; padding: 80px 0 0 0;
+			// background: _palette(fg);
+		}
+	}
+
+	.vh {min-height: 100vh}
+	// .is-loading {display: none;}
+
+	section {position: relative;}
+	.sticky {position: fixed; top: 0}
+	.stuck {position:fixed; top:0; right: 0; bottom: 0; left: 0;}

@@ -1,0 +1,9 @@
+.projects-snip {position: relative;
+	&.white {color: _palette(bg);
+		h3 {color: _palette(bg)}
+	}
+	.image.fit {margin: 0}
+	img {position: relative; z-index: 0; max-height: 778px}
+	h3 {position: absolute; z-index: 1; bottom: 3.25em; left: 1em;}
+	p {position: absolute; z-index: 1; bottom: 1em; left: 1.25em; line-height: 1.25em;}
+}

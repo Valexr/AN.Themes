@@ -1,0 +1,47 @@
+.manifest {height: 250vh; overflow: hidden;
+	.manifest-slogan {vertical-align: middle; line-height: 100vh; z-index: 1;
+		h2 {display: inline-block; vertical-align: middle; max-width: 80%}
+		&.stuck h2 {max-width: 75%}
+	}
+	.image {
+		&.first-child {position: absolute; left: 46%; top: 65%;
+			@include breakpoint(xsmall) {left: 42.5%}
+		}
+		&.second-child {position: absolute; padding: 3em; left: 0; bottom: -20%;
+			@include breakpoint(xsmall) {left: -180px}
+		}
+		&.third-child {position: absolute; padding: 2em; right: 0; bottom: -70%;
+			@include breakpoint(xsmall) {right: -180px}
+		}
+	}
+	img {display: inline-block}
+	.fixed {
+		position: fixed;
+	    bottom: 0px;
+	    top: 0px;
+	    left: 0px;
+	    right: 0px;
+        padding: 0 5%;
+	    @include breakpoint(large) {padding: 0 15%}
+	    @include breakpoint(medium) {padding: 0 5%}
+	    @include breakpoint(small) {padding: 0}
+	}
+	.relative {
+	    position: relative;
+	    bottom: auto;
+	    top: auto;
+	    left: 0px;
+	    right: 0px;
+	}
+	.absolute {
+	    position: absolute;
+	    bottom: -1000px;
+	    top: auto;
+	    line-height: normal;
+
+	    @include breakpoint(large) {bottom: -900px}
+	    @include breakpoint(medium) {bottom: -910px}
+	    @include breakpoint(small) {bottom: -850px}
+	    @include breakpoint(xsmall) {bottom: -750px}
+	}
+}
