@@ -2,3 +2,4 @@ $ cat .gitignore
 /assets/sass/.sass-cache/
 .DS_Store
 sftp-config.json
+/assets/css/main.css.map
