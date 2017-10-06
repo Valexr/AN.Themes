@@ -2,6 +2,22 @@
 
 /* Nav */
 
+	#nav-mask {
+		content: '';
+		display: block;
+		position: fixed;
+	    overflow: hidden;
+	    z-index: 1000;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    background-color: _palette(fg);
+	    opacity: 0;
+	    @include vendor('transition', ('opacity #{_duration(nav)} ease'));
+
+	    &.visible {opacity: 0.7}
+	}
 	#nav {
 		@include vendor('transform', 'translateX(20em)');
 		@include vendor('transition', ('transform #{_duration(nav)} ease', 'box-shadow #{_duration(nav)} ease', 'visibility #{_duration(nav)}'));
@@ -19,6 +35,13 @@
 		visibility: hidden;
 		width: 20em;
 		z-index: _misc(z-index-base) + 2;
+
+		p {position: absolute; margin: 0; bottom: 1em; right: 3em; left: 2em; font-size: 0.8em;
+			a {text-decoration: none; padding-left: 1em; position: absolute; display: block; bottom: 0; right: 0;
+				&:hover {opacity: 0.7; cursor: pointer}
+				i {position: absolute; left: 0; bottom: 5px;}
+			}
+		}
 
 		> ul {
 			margin: 0 0 (_size(element-margin) * 0.5) 0;
@@ -96,11 +119,49 @@
 
 		&.visible {
 			@include vendor('transform', 'translateX(0)');
-			box-shadow: 0 0 1.5em 0 rgba(0,0,0,0.2);
+			// box-shadow: 0 0 1.5em 0 rgba(0,0,0,0.2);
 			visibility: visible;
 		}
 
 		@include breakpoint(small) {
 			// padding: 2.5em 1.75em;
 		}
+
+		.nav-social {
+    		position: absolute;
+    		list-style: none;
+    		text-align: left;
+    		padding: 0;
+    		margin: 0;
+		    bottom: 4em;
+    		right: 2em;
+    		li {display: inline}
+    		a {
+	    	    width: 22px;
+	    		height: 22px;
+	    		display: inline-block;
+	    		background-repeat: no-repeat;
+	    		cursor: pointer;
+			}
+    		.telegram {
+    			a {background-image: url(../../images/icon/t-b-1.svg);
+		    		&:hover {background-image: url(../../images/icon/t-b-2.svg);}
+    			}
+    		}
+    		.insta {
+    			a {background-image: url(../../images/icon/in-b-1.svg);
+		    		&:hover {background-image: url(../../images/icon/in-b-2.svg);}
+    			}
+    		}
+    		.vk {
+    			a {background-image: url(../../images/icon/vk-b-1.svg);
+		    		&:hover {background-image: url(../../images/icon/vk-b-2.svg);}
+    			}
+    		}
+    		.fb {
+    			a {background-image: url(../../images/icon/f-b-1.svg);
+		    		&:hover {background-image: url(../../images/icon/f-b-2.svg);}
+    			}
+    		}
+    	}
 	}

@@ -38,6 +38,8 @@
 		});
 
 	// Nav.
+		var	$navMask = document.querySelector('#nav-mask');
+
 		var	$nav = document.querySelector('#nav'),
 			$navToggle = document.querySelector('a[href="#nav"]'),
 			$navClose;
@@ -50,6 +52,8 @@
 		// Event: Hide nav on body click/tap.
 			addEventsListener($body, 'click touchend', function(event) {
 				$nav.classList.remove('visible');
+				$navMask.classList.remove('visible');
+				$body.classList.remove('fixed');
 			});
 
 		// Toggle.
@@ -61,6 +65,8 @@
 					event.stopPropagation();
 
 					$nav.classList.toggle('visible');
+					$navMask.classList.toggle('visible');
+					$body.classList.toggle('fixed');
 
 				});
 
@@ -78,6 +84,8 @@
 
 					if (event.keyCode == 27)
 						$nav.classList.remove('visible');
+						$navMask.classList.remove('visible');
+						$body.classList.remove('fixed');
 
 				});
 
@@ -88,6 +96,8 @@
 					event.stopPropagation();
 
 					$nav.classList.remove('visible');
+					$navMask.classList.remove('visible');
+					$body.classList.remove('fixed');
 
 				});
 
