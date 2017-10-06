@@ -3,3 +3,4 @@ $ cat .gitignore
 .DS_Store
 sftp-config.json
 /assets/css/main.css.map
+/assets/sass/.sassbuilder-config.json
