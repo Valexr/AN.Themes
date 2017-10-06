@@ -125,6 +125,7 @@ http://flickity.metafizzy.co
   // opacity: 0.25;
   cursor: pointer;
 }
+.flickity-page-dots .dot:hover {background: white;}
 
 .flickity-page-dots .dot.is-selected {
   opacity: 1;
