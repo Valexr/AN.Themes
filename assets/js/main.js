@@ -122,6 +122,13 @@ $(window).scroll(function () {
 	if ($('body').is('.artists-page')) {}
 });
 
+// NOTIFY-CLOSE --------------------------------
+$('.an-notify-close').on( 'click', function() {
+	$('.an-notify').removeClass('sticky');
+})
+
+
+
 // FLICKITY ------------------------------------
 var $carousel = $('.carousel').flickity({
 	cellSelector: '.carousel-cell',

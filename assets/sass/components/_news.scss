@@ -11,15 +11,13 @@
 		@include breakpoint(xsmall) {padding: 2em 0}
 	}
 	.news-snip-tags {list-style: none; padding: 1em 0; margin: 0;
-		li {display: inline-block; padding: 0; padding-right: 0.5em;
-			a {text-decoration: none; color: _palette(accent2, fg); font-size: 9pt; cursor: pointer;
+		li {display: inline-block; padding: 0; padding-right: 0.5em;text-decoration: none; color: _palette(fg-light); font-size: 9pt; cursor: pointer; font-family: _font(family-bold);
 				&:hover {color: _palette(fg)}
-			}
 		}
 	}
 	h4 {line-height: 1.25em; margin-bottom: 0.5em}
 	p {margin-bottom: 1em; line-height: 1.45em}
-	.news-snip-date {color: _palette(accent2, fg);}
+	.news-snip-date {color: _palette(fg-light); font-family: _font(family-bold);}
 }
 .news-page {
 	h1 {margin: 0;}
@@ -32,3 +30,4 @@
 		}
 	}
 }
+.news-snip-last {}

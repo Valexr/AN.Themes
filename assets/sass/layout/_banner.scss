@@ -22,7 +22,10 @@
 		    left: 0;
 		    background-color: _palette(fg);
 		    opacity: 0.42;
-		    &:hover {cursor: e-resize}
+		    &:hover {
+		    	// cursor: e-resize;
+				cursor: url(../../images/icon/arrow-left-w.png), center;
+		    }
 	    }
 
 	    .carousel {
@@ -86,7 +89,11 @@
 		}
     	.banner-title {position: absolute; bottom: 5em; z-index: 1;
     		hr {margin-bottom: 1em}
-    		h2 {line-height: 1.25em}
+    		h2 {line-height: 1.25em;
+    			a {
+    				&:hover {cursor: pointer; opacity: 0.7}
+    			}
+    		}
     		@include breakpoint(small) {bottom: 0; padding: 4em}
     	}
     	.banner-footer {position: absolute; width: 100%; bottom: 2em; display: none; z-index: 1;
@@ -140,25 +147,30 @@
 	    .lg {
 	    	background-image: url(../../images/icon/logo-w.svg);
 	    	background-repeat: no-repeat;
-    	    width: 111px;
-    		height: 111px;
+	    	background-size: contain;
+    	    width: 125px;
+    		height: 125px;
     		float: left;
-    		padding-top: 140px;
+    		padding-top: 150px;
 
-    		#lg-desc {text-align: left; width: 150px; position: absolute;
-		    	p {font-size: 1em; margin-bottom: 0.75em;
+    		#lg-desc {text-align: left; width: 150px; position: absolute; line-height: 1.5;
+		    	p {font-size: 1em; margin-bottom: 0.75em; font-family: _font(family-light);
 		    		strong {color: _palette(bg); font-family: _font(family-bold);}
 		    	}
 		    	a {text-decoration: none; color: _palette(bg); cursor: pointer;
+		    		i {margin-right: 5px}
 		    		&:hover {opacity: 0.7}
 		    		&.info {
 		    			background-image: url(../../images/icon/i-w-2.svg);
+		    			background-size: contain;
+		    			background-position: center;
+		    			background-repeat: no-repeat;
 			    	    width: 27px;
 			    		height: 27px;
 			    		display: inline-block;
 			    		&:hover {
-			    			background-image: url(../../images/icon/i-w-1.svg);
-			    			// opacity: 1;
+			    			background-image: url(../../images/icon/i-w-1.svg); opacity: 1;
+			    			background-size: contain; background-position: center;
 			    		}
 		    		}
 		    	}
@@ -174,8 +186,10 @@
 			    	    width: 27px;
 			    		height: 27px;
 			    		display: inline-block;
+			    		// @include vendor('transition', 'all #{_duration(transition)} ease-in-out');
 			    		&:hover {
-			    			background-image: url(../../images/icon/ru-w-2.svg);
+			    			background-image: url(../../images/icon/ru-w-2.svg); opacity: 1;
+			    			-webkit-font-smoothing: subpixel-antialiased;
 			    		}
 	    			}
 		    	}
@@ -184,7 +198,8 @@
 	    		color: _palette(bg);
 	    		text-decoration: none;
 	    		font-size: 15px;
-	    		&:hover {opacity: 0.7; cursor: pointer;};
+	    		// @include vendor('transition', 'all #{_duration(transition)} ease-in-out');
+	    		&:hover {opacity: 0.7; cursor: pointer; -webkit-font-smoothing: subpixel-antialiased;};
 	    	}
 	    }
 

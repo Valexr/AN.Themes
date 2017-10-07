@@ -11,6 +11,7 @@
 		body {
 			-ms-overflow-style: scrollbar;
 			@include vendor('transition', 'background-image #{_duration(nav)} ease-in-out');
+			-webkit-font-smoothing: subpixel-antialiased!important;
 		}
 
 	// Ensures page width is always >=320px.
@@ -33,11 +34,13 @@
 
 		// Prevents animation/transition "flicker" on page load.
 		// Automatically added/removed by js/main.js.
-			&.is-loading {
-				*, *:before, *:after {
-					@include vendor('animation', 'none !important');
-					@include vendor('transition', 'none !important');
-				}
+		&.is-loading {
+			*, *:before, *:after {
+				@include vendor('animation', 'none !important');
+				@include vendor('transition', 'none !important');
 			}
-
+		}
 	}
+
+// OTHER STYLES FOR TOUCH-DEVICE -------------------------
+@media (pointer:coarse){}

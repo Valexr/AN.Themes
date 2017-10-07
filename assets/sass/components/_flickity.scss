@@ -1,0 +1,98 @@
+/*! Flickity v2.0.10
+http://flickity.metafizzy.co
+---------------------------------------------- */
+
+.flickity-enabled {position: relative;
+  &:focus { outline: none; }
+}
+
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  .flickity-viewport {cursor: move; cursor: -webkit-grab; cursor: grab;}
+  .flickity-viewport.is-pointer-down {cursor: -webkit-grabbing; cursor: grabbing;}
+}
+
+
+
+/* ---- previous/next buttons ---- */
+
+.flickity-prev-next-button {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border: none;
+  // border-radius: 50%;
+  background: transparent;
+  // background: hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+  /* vertically center */
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  &:hover { background: transparent; border: 0; box-shadow: none}
+  &:focus {outline: none;}
+  &:active {opacity: 0.6;}
+  &:disabled {opacity: 0.3; cursor: auto;}
+  svg {position: absolute; left: 20%; top: 20%; width: 60%; height: 60%;}
+  .arrow {fill: #fff; opacity: 0.7;}
+}
+
+.flickity-prev-next-button.previous { left: 10px; }
+.flickity-prev-next-button.next { right: 10px; }
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: 10px;
+}
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: 10px;
+}
+
+/* ---- page dots ---- */
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: 2em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+
+  .dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 8px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+    @include vendor('transition', 'all #{_duration(transition)} ease-in-out');
+    &:hover {background: white;}
+    &.is-selected {opacity: 1; background: white;}
+  }
+}
+
+.flickity-rtl .flickity-page-dots { direction: rtl; }
