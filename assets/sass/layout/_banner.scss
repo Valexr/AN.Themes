@@ -22,27 +22,20 @@
 		    left: 0;
 		    background-color: _palette(fg);
 		    opacity: 0.42;
-		    cursor: url(./blank.cur), none;
-		    &.banner-mask-left {right: 50%}
-		    &.banner-mask-right {left: 50%}
-		    &:hover {
-		    	// cursor: e-resize;
-				// cursor: url(../../images/icon/arrow-right-w.png), auto;
-		    }
 	    }
-	    #mycursor-left {
-		 	cursor: none;
-		 	width: 20px;
-		 	height: 20px;
-		 	background: url(../../images/icon/arrow-w.svg) no-repeat left top;
-		 	-webkit-transform: rotate(-180deg);
-			transform: rotate(-180deg);
-		 	position: absolute;
-		 	display: none;
-		 	top: 0;
-		 	left: 0;
-		 	z-index: 10000;
-		}
+	    .mask-cursor {
+	    	position: absolute;
+		    overflow: hidden;
+		    z-index: 1;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		    opacity: 1;
+		    cursor: none;
+		    &-left {@extend .mask-cursor; right: 50%;}
+	    	&-right {@extend .mask-cursor; left: 50%;}
+	    }
 		#mycursor-right {
 		 	cursor: none;
 		 	width: 20px;
@@ -54,8 +47,11 @@
 		 	left: 0;
 		 	z-index: 10000;
 		}
-		// #mycursor-left {background: url(../../images/icon/arrow-left-w.svg) no-repeat left top;}
-	 	// #mycursor-right {background: url(../../images/icon/arrow-right-w.svg) no-repeat left top;}
+		#mycursor-left {
+		 	@extend #mycursor-right;
+		 	-webkit-transform: rotate(-180deg);
+			transform: rotate(-180deg);
+		}
 
 	    .carousel {
 	    	position: absolute;
@@ -119,7 +115,7 @@
 		    	top: 2em; right: 2em; bottom: 2em; left: 2em;
 		    }
 		}
-    	.banner-title {position: absolute; bottom: 5em; z-index: 1;
+    	.banner-title {position: absolute; bottom: 5em; z-index: 10; right: 4em;
     		hr {margin-bottom: 1em}
     		h2 {line-height: 1.25em;
     			a {

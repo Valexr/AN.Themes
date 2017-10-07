@@ -21,10 +21,12 @@
 	    top: 0px;
 	    left: 0px;
 	    right: 0px;
-        padding: 0 5%;
-	    @include breakpoint(large) {padding: 0 15%}
-	    @include breakpoint(medium) {padding: 0 5%}
-	    @include breakpoint(small) {padding: 0}
+        padding: 0 15%;
+	    @include breakpoint(xlarge) {padding: 0 30%}
+	    @include breakpoint(large) {padding: 0 5%}
+	    // @include breakpoint(medium) {padding: 0 5%}
+	    // @include breakpoint(small) {padding: 0}
+	    @include breakpoint(xsmall) {padding: 0}
 	}
 	.relative {
 	    position: relative;
