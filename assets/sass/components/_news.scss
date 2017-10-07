@@ -1,4 +1,4 @@
-.news-snip {padding: 0 2em 0; box-sizing: border-box;
+.news-snip {padding: 0 2em 0; box-sizing: border-box; position: relative;
 	@include breakpoint(xsmall) {padding: 2em 0}
 	&.fit {padding: 4em 2em;
 		@include breakpoint(xsmall) {padding: 2em 0}
@@ -30,4 +30,17 @@
 		}
 	}
 }
-.news-snip-last {}
+.news-snip-last {
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+    width: auto;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    left: -35px;
+    top: 37px;
+    font-family: _font(family-bold);
+    font-size: 15px;
+
+    .hor-image & {top: 115px;}
+}

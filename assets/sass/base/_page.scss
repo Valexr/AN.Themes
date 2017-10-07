@@ -41,6 +41,9 @@
 			}
 		}
 	}
+	.panel {
+		&.shop {padding-bottom: 50px}
+	}
 
 // OTHER STYLES FOR TOUCH-DEVICE -------------------------
 @media (pointer:coarse){}
