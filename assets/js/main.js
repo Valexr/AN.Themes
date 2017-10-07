@@ -114,13 +114,23 @@ $(window).scroll(function () {
 	} else {
 		if ($(this).scrollTop() > $(window).height()) {
 	    	$('header').addClass("sticky");
+	    	$('#an-backtotop').css('bottom', '2em')
 	    	// $('#header-nav').attr('href', '#nav');
 	    	// $('#banner-nav').attr('href', '');
 	    }
-	    else { $('header').removeClass("sticky"); }
+	    else {
+	    	$('header').removeClass("sticky");
+	    	$('#an-backtotop').css('bottom', '-5em');
+	    }
 	}
-	if ($('body').is('.artists-page')) {}
+	// if ($('body').is('.artists-page')) {}
+		// if ($(this).scrollTop() > $(window).height()) {
+		// 	$('#an-backtotop').css('bottom', '2em')
+		// } else {
+		// 	$('#an-backtotop').css('bottom', '-5em')
+		// }
 });
+// $('#top').animatescroll({scrollSpeed:2000,easing:'easeInOutQuint'});
 
 // NOTIFY-CLOSE --------------------------------
 $('.an-notify-close').on( 'click', function() {
@@ -208,12 +218,12 @@ skel
 		}
 
 	})
-	skel.on("+large", function() {
+	.on("+large", function() {
 		/* do something when "large" breakpoint becomes active */
 		$carousel.flickity({draggable: false})
 		// $('body').css('background', 'red')
 	})
-	skel.on("-large !large", function() {
+	.on("-large !large", function() {
 		/* do something when "large" breakpoint is (or becomes) inactive */
 		// $carousel.flickity({draggable: true})
 		// $('body').css('background', 'red')
@@ -222,11 +232,11 @@ skel
 
 // ARTISTS-HOVER-BACK
 $('.artists-list').each(function() {
-	$("a").hover(function() {
-		$('body').css('background-image', "url('images/1.jpg')");
-	}, function () {
-		$('body').css('background-image', "url('images/artists/artists-bg.jpg')");
-	});
+	// $("a").hover(function() {
+	// 	$('body').css('background-image', "url('images/1.jpg')");
+	// }, function () {
+	// 	$('body').css('background-image', "url('images/artists/artists-bg.jpg')");
+	// });
 	$("a[href|='ALEXD.html']").hover(function() {
 		$('body').css('background-image', "url('images/1.jpg')");
 	});
