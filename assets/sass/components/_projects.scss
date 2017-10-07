@@ -1,4 +1,11 @@
 .projects-snip {position: relative;
+	a {display: block; color: inherit;
+		&:hover {opacity: 1;
+			.image {
+				&:after {opacity: 0.42;}
+			}
+		}
+	}
 	&.white {color: _palette(bg);
 		h3 {color: _palette(bg)}
 	}
