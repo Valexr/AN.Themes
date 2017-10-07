@@ -129,7 +129,7 @@ $('.an-notify-close').on( 'click', function() {
 
 
 
-// FLICKITY ------------------------------------
+// FLICKITY --------------------------------
 var $carousel = $('.carousel').flickity({
 	cellSelector: '.carousel-cell',
 	// selectedAttraction: 0.01,
@@ -142,11 +142,83 @@ var $carousel = $('.carousel').flickity({
 	wrapAround: true,
 	bgLazyLoad: true,
 	contain: true,
-	// draggable: false
+	// draggable: false,
+	// watchCSS: true
+	arrowShape: {
+		x0: 10,
+		x1: 60, y1: 50,
+		x2: 65, y2: 50,
+		x3: 15
+	}
 });
-$('.banner-mask').on( 'click', function() {
+$('.banner-mask-right').on( 'click', function() {
   $carousel.flickity('next');
 });
+$('.banner-mask-left').on( 'click', function() {
+  $carousel.flickity('previous');
+});
+
+// FLICKITY-CUSTOM-CURSOR ----------------------------
+$(document).ready(function(){
+  	$('.banner-mask-left').mouseout(function(){
+       	$('#mycursor-left').hide();
+       	return false;
+  	});
+  	$('.banner-mask-left').mouseenter(function(){
+       	$('#mycursor-left').show();
+       	return false;
+  	});
+  	$('.banner-mask-left').mousemove(function(e){
+       	$('#mycursor-left').css('left', e.clientX - 20).css('top', e.clientY + 7);
+  	});
+});
+$(document).ready(function(){
+	$('.banner-mask-right').mouseout(function(){
+		$('#mycursor-right').hide();
+		return false;
+	});
+	$('.banner-mask-right').mouseenter(function(){
+		$('#mycursor-right').show();
+		return false;
+	});
+	$('.banner-mask-right').mousemove(function(e){
+		$('#mycursor-right').css('left', e.clientX - 20).css('top', e.clientY + 7);
+	});
+});
+
+
+skel
+	.on("ready", function() {
+
+		/* do DOM ready stuff */
+
+		if (skel.breakpoint("small").active) {
+			/* do something specific for small displays */
+		}
+
+		if (skel.vars.touch) {
+			/* enable feature for devices with a touchscreen */
+			// $('body').css('background', 'red');
+			// $carousel.flickity({draggable: true});
+			// $carousel.flickity('bindDrag');
+		}
+
+		if (skel.vars.IEVersion < 9) {
+			/* apply workaround for IE<9 */
+		}
+
+	})
+	skel.on("+large", function() {
+		/* do something when "large" breakpoint becomes active */
+		$carousel.flickity({draggable: false})
+		// $('body').css('background', 'red')
+	})
+	skel.on("-large !large", function() {
+		/* do something when "large" breakpoint is (or becomes) inactive */
+		// $carousel.flickity({draggable: true})
+		// $('body').css('background', 'red')
+	});
+
 
 // ARTISTS-HOVER-BACK
 $('.artists-list').each(function() {
@@ -191,6 +263,7 @@ $('.grid').isotope({
 
 // WOW & Animate ----------------------------
 new WOW().init();
+
 
 // WayPoint ---------------------------------
 // var waypoint = new Waypoint({

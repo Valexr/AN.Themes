@@ -39,17 +39,19 @@ http://flickity.metafizzy.co
 .flickity-prev-next-button {
   position: absolute;
   top: 50%;
-  width: 44px;
-  height: 44px;
+  width: 50%;
+  height: 100%;
   border: none;
   // border-radius: 50%;
   background: transparent;
   // background: hsla(0, 0%, 100%, 0.75);
-  cursor: pointer;
+  // cursor: pointer;
   /* vertically center */
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  &:hover { background: transparent; border: 0; box-shadow: none}
+  opacity: 0;
+  @include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+  &:hover {background: transparent; border: 0; box-shadow: none; opacity: 1}
   &:focus {outline: none;}
   &:active {opacity: 0.6;}
   &:disabled {opacity: 0.3; cursor: auto;}
@@ -57,16 +59,12 @@ http://flickity.metafizzy.co
   .arrow {fill: #fff; opacity: 0.7;}
 }
 
-.flickity-prev-next-button.previous { left: 10px; }
-.flickity-prev-next-button.next { right: 10px; }
+.flickity-prev-next-button.previous { left: 0; }
+.flickity-prev-next-button.next { right: 0; }
 /* right to left */
-.flickity-rtl .flickity-prev-next-button.previous {
-  left: auto;
-  right: 10px;
-}
-.flickity-rtl .flickity-prev-next-button.next {
-  right: auto;
-  left: 10px;
+.flickity-rtl .flickity-prev-next-button {
+  &.previous {left: auto; right: 0;}
+  &.next {right: auto; left: 0;}
 }
 
 /* ---- page dots ---- */

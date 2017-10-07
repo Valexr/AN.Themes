@@ -22,11 +22,38 @@
 		    left: 0;
 		    background-color: _palette(fg);
 		    opacity: 0.42;
+		    cursor: url(./blank.cur), none;
+		    &.banner-mask-left {right: 50%}
+		    &.banner-mask-right {left: 50%}
 		    &:hover {
 		    	// cursor: e-resize;
-				cursor: url(../../images/icon/arrow-left-w.png), center;
+				// cursor: url(../../images/icon/arrow-right-w.png), auto;
 		    }
 	    }
+	    #mycursor-left {
+		 	cursor: none;
+		 	width: 50px;
+		 	height: 100px;
+		 	background: url(../../images/icon/arrow-left-w.svg) no-repeat left top;
+		 	position: absolute;
+		 	display: none;
+		 	top: 0;
+		 	left: 0;
+		 	z-index: 10000;
+		}
+		#mycursor-right {
+		 	cursor: none;
+		 	width: 50px;
+		 	height: 100px;
+		 	background: url(../../images/icon/arrow-right-w.svg) no-repeat left top;
+		 	position: absolute;
+		 	display: none;
+		 	top: 0;
+		 	left: 0;
+		 	z-index: 10000;
+		}
+		#mycursor-left {background: url(../../images/icon/arrow-left-w.svg) no-repeat left top;}
+	 	#mycursor-right {background: url(../../images/icon/arrow-right-w.svg) no-repeat left top;}
 
 	    .carousel {
 	    	position: absolute;
@@ -35,7 +62,10 @@
 	    	bottom: 0;
 	    	left: 0;
 	    	min-height: 100vh;
-	    	// z-index: 100;
+	   //  	&:hover {
+		  //   	cursor: e-resize;
+				// cursor: url(../../images/icon/arrow-left-w.png), center;
+		  //   }
 
 	    	.static-banner-logo {
     		    position: absolute;
