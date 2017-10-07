@@ -78,6 +78,7 @@ http://flickity.metafizzy.co
   list-style: none;
   text-align: center;
   line-height: 1;
+  @include breakpoint(xsmall) {bottom: 1em}
 
   .dot {
     display: inline-block;

@@ -3,6 +3,14 @@
 	&.fit {padding: 4em 2em;
 		@include breakpoint(xsmall) {padding: 2em 0}
 	}
+	.image {
+		@include breakpoint(small) {
+			&:after {display: none}
+		}
+		@include breakpoint(xsmall) {
+			&:after {display: none}
+		}
+	}
 	.image.fit {margin: 0}
 	.news-snip-content {
 		@include breakpoint(xsmall) {padding: 0 2em}
@@ -41,6 +49,7 @@
     top: 37px;
     font-family: _font(family-bold);
     font-size: 15px;
+    @include breakpoint(xsmall) {z-index: 1; left: -21px}
 
     .hor-image & {top: 115px;}
 }

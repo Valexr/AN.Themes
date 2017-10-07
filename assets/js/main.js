@@ -53,7 +53,9 @@
 			addEventsListener($body, 'click touchend', function(event) {
 				$nav.classList.remove('visible');
 				$navMask.classList.remove('visible');
-				$body.classList.remove('fixed');
+				if (!skel.vars.touch) {
+					$body.classList.remove('fixed');
+				};
 			});
 
 		// Toggle.
@@ -66,8 +68,9 @@
 
 					$nav.classList.toggle('visible');
 					$navMask.classList.toggle('visible');
-					$body.classList.toggle('fixed');
-
+					if (!skel.vars.touch) {
+						$body.classList.toggle('fixed');
+					}
 				});
 
 		// Close.
@@ -85,8 +88,9 @@
 					if (event.keyCode == 27)
 						$nav.classList.remove('visible');
 						$navMask.classList.remove('visible');
-						$body.classList.remove('fixed');
-
+						if (!skel.vars.touch) {
+							$body.classList.remove('fixed');
+						}
 				});
 
 			// Event: Hide nav on click.
@@ -97,8 +101,9 @@
 
 					$nav.classList.remove('visible');
 					$navMask.classList.remove('visible');
-					$body.classList.remove('fixed');
-
+					if (!skel.vars.touch) {
+						$body.classList.remove('fixed');
+					}
 				});
 
 })();
@@ -152,6 +157,7 @@ var $carousel = $('.carousel').flickity({
 	wrapAround: true,
 	bgLazyLoad: true,
 	contain: true,
+	setGallerySize: false,
 	// draggable: false,
 	// watchCSS: true
 	arrowShape: {
@@ -161,6 +167,26 @@ var $carousel = $('.carousel').flickity({
 		x3: 15
 	}
 });
+
+// VIEWPORT-WIDTH-HEIGHT ---------------------------
+// global vars
+// var winWidth = $(window).width();
+// var winHeight = $(window).height();
+
+// // set initial div height / width
+// $('.carousel').css({
+//     'width': winWidth,
+// 	'height': winHeight,
+// });
+
+// // make sure div stays full width/height on resize
+// $(window).resize(function(){
+//     $('.carousel').css({
+// 	    'width': winWidth,
+// 	    'height': winHeight,
+// 	});
+// });
+
 $('.banner-mask-right').on( 'click', function() {
   $carousel.flickity('next');
 });
