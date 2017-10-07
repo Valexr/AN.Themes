@@ -4,6 +4,7 @@
 		@include breakpoint(xsmall) {padding: 2em 0}
 	}
 	.image {
+		&:hover {opacity: 1}
 		@include breakpoint(small) {
 			&:after {display: none}
 		}
@@ -20,7 +21,7 @@
 	}
 	.news-snip-tags {list-style: none; padding: 1em 0; margin: 0;
 		li {display: inline-block; padding: 0; padding-right: 0.5em;text-decoration: none; color: _palette(fg-light); font-size: 9pt; cursor: pointer; font-family: _font(family-bold);
-				&:hover {color: _palette(fg)}
+				// &:hover {color: _palette(fg)}
 		}
 	}
 	h4 {line-height: 1.25em; margin-bottom: 0.5em}
