@@ -216,7 +216,7 @@ $(document).ready(function(){
        	return false;
   	});
   	$('.mask-cursor-left').mousemove(function(e){
-       	$('#mycursor-left').css('left', e.clientX - 20).css('top', e.clientY + 7);
+       	$('#mycursor-left').css('left', e.clientX - 0).css('top', e.clientY - 10);
   	});
 });
 $(document).ready(function(){
@@ -229,7 +229,7 @@ $(document).ready(function(){
 		return false;
 	});
 	$('.mask-cursor-right').mousemove(function(e){
-		$('#mycursor-right').css('left', e.clientX - 20).css('top', e.clientY + 7);
+		$('#mycursor-right').css('left', e.clientX - 20).css('top', e.clientY - 10);
 	});
 });
 
