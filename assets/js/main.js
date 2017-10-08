@@ -139,7 +139,32 @@ $(window).scroll(function () {
 		// 	$('#an-backtotop').css('bottom', '-5em')
 		// }
 });
-// $('#top').animatescroll({scrollSpeed:2000,easing:'easeInOutQuint'});
+
+if ($('body').is('.home-page')) {
+	$('.lg').attr('onclick', '$("#top").animatescroll({scrollSpeed:2000,easing:"easeOutBack"});');
+	$('.lg a').removeAttr('href');
+};
+
+// SCROLLIFY -----------------------------------
+// $.scrollify({
+// 	section : ".panel",
+// 	sectionName : "section-name",
+// 	interstitialSection : "",
+// 	easing: "easeOutExpo",
+// 	scrollSpeed: 1100,
+// 	offset : 0,
+// 	scrollbars: true,
+// 	standardScrollElements: "",
+// 	setHeights: true,
+// 	overflowScroll: true,
+// 	updateHash: true,
+// 	touchScroll:true,
+// 	before:function() {},
+// 	after:function() {},
+// 	afterResize:function() {},
+// 	afterRender:function() {}
+// });
+
 
 // NOTIFY-CLOSE --------------------------------
 $('.an-notify-close').on( 'click', function() {

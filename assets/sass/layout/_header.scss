@@ -42,7 +42,7 @@
     		@include breakpoint(xsmall) {left: 0.5em}
     		.artists-page & {background-image: url(../../images/icon/logo-w.svg);}
 
-    		a {display: block; width: 80px; height: 80px;}
+    		a {display: block; width: 80px; height: 80px; cursor: pointer}
     	}
 
 		> h1 {
