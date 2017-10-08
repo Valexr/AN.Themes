@@ -123,7 +123,7 @@
     			}
     		}
     		@include breakpoint(small) {bottom: 0; padding: 4em}
-    		@include breakpoint(xsmall) {bottom: 0; padding: 2em 2em 3em}
+    		@include breakpoint(xsmall) {bottom: 0; padding: 2em 2em 3em; right: 0; left: 0}
     	}
     	.banner-footer {position: absolute; width: 100%; bottom: 2em; display: none; z-index: 1;
 	    		@include breakpoint(xlarge) {display: block}

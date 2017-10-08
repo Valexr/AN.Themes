@@ -50,7 +50,7 @@
     top: 37px;
     font-family: _font(family-bold);
     font-size: 15px;
-    @include breakpoint(xsmall) {z-index: 1; left: -21px}
+    @include breakpoint(xsmall) {z-index: 1; left: -21px; top: 90px}
 
-    .hor-image & {top: 115px;}
+    .hor-image & {top: 90px;}
 }

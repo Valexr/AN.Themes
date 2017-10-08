@@ -1,11 +1,11 @@
 .shop {
-	.shop-card {
+	.shop-card {padding-bottom: 2em;
 		img {min-height: 130px}
 		h4 {margin: 0;}
 		p {margin: 0}
 		a {display: block; text-decoration: none;}
 		span {font-weight: bold}
-		.image {@include vendor('transition', 'all #{_duration(transition)} ease-in-out'); min-height: 145px;
+		.image {@include vendor('transition', 'all #{_duration(transition)} ease-in-out'); min-height: 180px;
 			&:hover {opacity: 0.7;
 				&:after {display: none}
 			}

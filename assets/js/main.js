@@ -54,7 +54,7 @@
 				$nav.classList.remove('visible');
 				$navMask.classList.remove('visible');
 				if (!skel.vars.touch) {
-					$body.classList.remove('fixed');
+					$body.classList.remove('noscroll');
 				};
 			});
 
@@ -69,7 +69,7 @@
 					$nav.classList.toggle('visible');
 					$navMask.classList.toggle('visible');
 					if (!skel.vars.touch) {
-						$body.classList.toggle('fixed');
+						$body.classList.toggle('noscroll');
 					}
 				});
 
@@ -89,7 +89,7 @@
 						$nav.classList.remove('visible');
 						$navMask.classList.remove('visible');
 						if (!skel.vars.touch) {
-							$body.classList.remove('fixed');
+							$body.classList.remove('noscroll');
 						}
 				});
 
@@ -102,7 +102,7 @@
 					$nav.classList.remove('visible');
 					$navMask.classList.remove('visible');
 					if (!skel.vars.touch) {
-						$body.classList.remove('fixed');
+						$body.classList.remove('noscroll');
 					}
 				});
 
