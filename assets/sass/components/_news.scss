@@ -1,6 +1,20 @@
-.news-snip {padding: 0 2em 0; box-sizing: border-box; position: relative;
+
+.news-snip {
+	// padding: 0 0 0;
+	box-sizing: border-box;
+	position: relative;
+	&:nth-of-type(2n) {padding-left: 4em;}
+	&:nth-of-type(2n+1) {padding-right: 4em;
+		.news-snip-last {left: -4.5em;}
+	}
 	@include breakpoint(xsmall) {padding: 2em 0}
-	&.fit {padding: 4em 2em;
+	&.hor-image {padding-top: 8.25em;
+		@include breakpoint(xsmall) {padding: 2em 0}
+		.news-snip-last {top: 9.7em;}
+	}
+}
+.news {
+	.news-banner {padding: 4em 0;
 		@include breakpoint(xsmall) {padding: 2em 0}
 	}
 	.image {
@@ -16,41 +30,36 @@
 	.news-snip-content {
 		@include breakpoint(xsmall) {padding: 0 2em}
 	}
-	&.hor-image {padding: 6em 2em 0;
-		@include breakpoint(xsmall) {padding: 2em 0}
-	}
 	.news-snip-tags {list-style: none; padding: 1em 0; margin: 0;
-		li {display: inline-block; padding: 0; padding-right: 0.5em;text-decoration: none; color: _palette(fg-light); font-size: 9pt; cursor: pointer; font-family: _font(family-bold);
-				// &:hover {color: _palette(fg)}
-		}
+		li {display: inline-block; padding: 0; padding-right: 0.5em;text-decoration: none; color: _palette(fg-light); font-size: 9pt; font-family: _font(family-bold);}
 	}
 	h4 {line-height: 1.25em; margin-bottom: 0.5em}
 	p {margin-bottom: 1em; line-height: 1.45em}
 	.news-snip-date {color: _palette(fg-light); font-family: _font(family-bold);}
+	.news-snip-last {
+		-webkit-transform: rotate(-90deg);
+		transform: rotate(-90deg);
+	    width: auto;
+	    height: 20px;
+	    display: inline-block;
+	    position: absolute;
+	    left: -1em;
+	    top: 37px;
+	    font-family: _font(family-bold);
+	    font-size: 15px;
+	    @include breakpoint(xsmall) {z-index: 1; left: -21px; top: 90px}
+	    // .hor-image & {top: 9.5em;}
+	}
 }
+
 .news-page {
 	h1 {margin: 0;}
 }
-.news-tags {list-style: none; margin: 3em auto 5em; text-align: center;
+.news-tags {list-style: none; margin: 3em auto 5em; text-align: center; padding: 0;
 	li {display: inline-block; padding: 0 2em;
 		a {font-size: 20px; font-family: _font(family-bold); text-decoration: none; color: _palette(fg-light);
 			&:hover {color: _palette(fg); cursor: pointer}
 			&.active {color: _palette(fg)}
 		}
 	}
-}
-.news-snip-last {
-	-webkit-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-    width: auto;
-    height: 20px;
-    display: inline-block;
-    position: absolute;
-    left: -35px;
-    top: 37px;
-    font-family: _font(family-bold);
-    font-size: 15px;
-    @include breakpoint(xsmall) {z-index: 1; left: -21px; top: 90px}
-
-    .hor-image & {top: 90px;}
 }

@@ -222,12 +222,11 @@ var $carousel = $('.carousel').flickity({
 // 	    'height': winHeight,
 // 	});
 // });
-
-$('.mask-cursor-right').on( 'click', function() {
-  $carousel.flickity('next');
-});
-$('.mask-cursor-left').on( 'click', function() {
-  $carousel.flickity('previous');
+skel.on("ready", function() {
+	if (!skel.vars.touch) {
+		$('.mask-cursor-right').on( 'click', function() {$carousel.flickity('next');});
+		$('.mask-cursor-left').on( 'click', function() {$carousel.flickity('previous');});
+	};
 });
 
 // FLICKITY-CUSTOM-CURSOR ----------------------------
@@ -339,7 +338,7 @@ $('.artists-list').each(function() {
 
 // ISOTOPE ----------------------------------
 $('.grid').isotope({
-  itemSelector: '.news-snip',
+  itemSelector: '.grid-item',
   layoutMode: 'fitRows'
   // ...
 });
@@ -359,53 +358,55 @@ new WOW().init();
 // var sticky = new Waypoint.Sticky({
 //   element: $('.manifest-slogan')[0]
 // })
-var inview = new Waypoint.Inview({
-  element: $('#banner')[0],
-  enter: function(direction) {
-  	$('.manifest-slogan').addClass('relative')
-  	$('.manifest-slogan').removeClass('fixed')
-  	$('.manifest-slogan').removeClass('absolute')
-  },
-  entered: function(direction) {},
-  exit: function(direction) {},
-  exited: function(direction) {
-	// $('.manifest-slogan').addClass('fixed')
-	// $('.manifest-slogan').removeClass('relative')
-	// $('.manifest-slogan').removeClass('absolute')
-	// $('.manifest').css( {'height': '220vh'} )
-	}
-})
-var inview = new Waypoint.Inview({
-  element: $('.manifest')[0],
-  enter: function(direction) {},
-  entered: function(direction) {
-	// $('.manifest-slogan').addClass('absolute')
- //  	$('.manifest-slogan').removeClass('fixed')
- //  	$('.manifest-slogan').removeClass('relative')
-  },
-  exit: function(direction) {
-  	$('.manifest-slogan').addClass('fixed')
-	$('.manifest-slogan').removeClass('relative')
-	$('.manifest-slogan').removeClass('absolute')
-	// $('.manifest').css( {'height': '220vh'} )
-  },
-  exited: function(direction) {
-	// $('.manifest-slogan').addClass('absolute')
- //  	$('.manifest-slogan').removeClass('fixed')
- //  	$('.manifest-slogan').removeClass('relative')
-	}
-})
-var inview = new Waypoint.Inview({
-  element: $('.news')[0],
-  enter: function(direction) {
-  	$('.manifest-slogan').addClass('absolute')
-  	$('.manifest-slogan').removeClass('fixed')
-  	$('.manifest-slogan').removeClass('relative')
-  },
-  entered: function(direction) {},
-  exit: function(direction) {},
-  exited: function(direction) {}
-})
+if ($('body').is('.home-page')) {
+	var inview = new Waypoint.Inview({
+		element: $('#banner')[0],
+		enter: function(direction) {
+			$('.manifest-slogan').addClass('relative')
+			$('.manifest-slogan').removeClass('fixed')
+			$('.manifest-slogan').removeClass('absolute')
+		},
+		entered: function(direction) {},
+		exit: function(direction) {},
+		exited: function(direction) {
+		// $('.manifest-slogan').addClass('fixed')
+		// $('.manifest-slogan').removeClass('relative')
+		// $('.manifest-slogan').removeClass('absolute')
+		// $('.manifest').css( {'height': '220vh'} )
+		}
+	})
+	var inview = new Waypoint.Inview({
+		element: $('.manifest')[0],
+		enter: function(direction) {},
+		entered: function(direction) {
+		// $('.manifest-slogan').addClass('absolute')
+		//  	$('.manifest-slogan').removeClass('fixed')
+		//  	$('.manifest-slogan').removeClass('relative')
+		},
+		exit: function(direction) {
+			$('.manifest-slogan').addClass('fixed')
+		$('.manifest-slogan').removeClass('relative')
+		$('.manifest-slogan').removeClass('absolute')
+		// $('.manifest').css( {'height': '220vh'} )
+		},
+		exited: function(direction) {
+		// $('.manifest-slogan').addClass('absolute')
+		//  	$('.manifest-slogan').removeClass('fixed')
+		//  	$('.manifest-slogan').removeClass('relative')
+		}
+	})
+	var inview = new Waypoint.Inview({
+		element: $('.news')[0],
+		enter: function(direction) {
+			$('.manifest-slogan').addClass('absolute')
+			$('.manifest-slogan').removeClass('fixed')
+			$('.manifest-slogan').removeClass('relative')
+		},
+		entered: function(direction) {},
+		exit: function(direction) {},
+		exited: function(direction) {}
+	})
+}
 
 
 

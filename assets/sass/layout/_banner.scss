@@ -138,8 +138,8 @@
     				&:hover {cursor: pointer; opacity: 0.7}
     			}
     		}
-    		@include breakpoint(small) {bottom: 0; padding: 4em}
-    		@include breakpoint(xsmall) {bottom: 0; padding: 2em 2em 3em; right: 0; left: 0}
+    		@include breakpoint(small) {bottom: 0; padding: 4em; min-height: 240px}
+    		@include breakpoint(xsmall) {bottom: 0; padding: 2em 2em 3em; right: 0; left: 0; min-height: 240px}
     	}
     	.banner-footer {position: absolute; width: 100%; bottom: 2em; display: none; z-index: 1;
 	    		@include breakpoint(xlarge) {display: block}
