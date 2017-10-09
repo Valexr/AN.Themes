@@ -1,6 +1,22 @@
 // skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
 
 /* Banner */
+// #mycursor-right {
+//  	// cursor: none;
+//  	width: 20px;
+//  	height: 20px;
+//  	background: url(../../images/icon/arrow-w.svg) no-repeat left top;
+//  	position: absolute;
+//  	display: none;
+//  	top: 0;
+//  	left: 0;
+//  	z-index: 10000;
+// }
+// #mycursor-left {
+//  	@extend #mycursor-right;
+//  	-webkit-transform: rotate(-180deg);
+// 	transform: rotate(-180deg);
+// }
 
 	#banner {
 		// @include padding(4em, 3.5em);
@@ -33,25 +49,29 @@
 		    left: 0;
 		    opacity: 1;
 		    cursor: none;
-		    &-left {@extend .mask-cursor; right: 50%;}
-	    	&-right {@extend .mask-cursor; left: 50%;}
+		    &-left {@extend .mask-cursor; right: 50%; cursor: url(../../images/icon/arrow-w-l.svg), auto;
+		    	@include breakpoint(small) {cursor: none}
+		    }
+	    	&-right {@extend .mask-cursor; left: 50%; cursor: url(../../images/icon/arrow-w-r.svg), auto;
+	    		@include breakpoint(small) {cursor: none}
+	    	}
 	    }
-		#mycursor-right {
-		 	cursor: none;
-		 	width: 20px;
-		 	height: 20px;
-		 	background: url(../../images/icon/arrow-w.svg) no-repeat left top;
-		 	position: absolute;
-		 	display: none;
-		 	top: 0;
-		 	left: 0;
-		 	z-index: 10000;
-		}
-		#mycursor-left {
-		 	@extend #mycursor-right;
-		 	-webkit-transform: rotate(-180deg);
-			transform: rotate(-180deg);
-		}
+		// #mycursor-right {
+		//  	cursor: none;
+		//  	width: 20px;
+		//  	height: 20px;
+		//  	background: url(../../images/icon/arrow-w.svg) no-repeat left top;
+		//  	position: absolute;
+		//  	display: none;
+		//  	top: 0;
+		//  	left: 0;
+		//  	z-index: 10000;
+		// }
+		// #mycursor-left {
+		//  	@extend #mycursor-right;
+		//  	-webkit-transform: rotate(-180deg);
+		// 	transform: rotate(-180deg);
+		// }
 
 	    .carousel {
 	    	position: absolute;

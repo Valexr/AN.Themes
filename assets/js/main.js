@@ -168,7 +168,7 @@ if ($('body').is('.home-page')) {
 
 // NOTIFY-CLOSE --------------------------------
 $('.an-notify-close').on( 'click', function() {
-	$('.an-notify').css('display', 'none');
+	$('.an-notify').css({'top': '-100px', 'position': 'absolute'});
 })
 // $(window).scroll(function () {
 //     if ($(this).scrollTop() > $(window).height()) {
@@ -231,32 +231,43 @@ $('.mask-cursor-left').on( 'click', function() {
 });
 
 // FLICKITY-CUSTOM-CURSOR ----------------------------
-$(document).ready(function(){
-  	$('.mask-cursor-left').mouseout(function(){
-       	$('#mycursor-left').hide();
-       	return false;
-  	});
-  	$('.mask-cursor-left').mouseenter(function(){
-       	$('#mycursor-left').show();
-       	return false;
-  	});
-  	$('.mask-cursor-left').mousemove(function(e){
-       	$('#mycursor-left').css('left', e.clientX - 0).css('top', e.clientY - 10);
-  	});
-});
-$(document).ready(function(){
-	$('.mask-cursor-right').mouseout(function(){
-		$('#mycursor-right').hide();
-		return false;
-	});
-	$('.mask-cursor-right').mouseenter(function(){
-		$('#mycursor-right').show();
-		return false;
-	});
-	$('.mask-cursor-right').mousemove(function(e){
-		$('#mycursor-right').css('left', e.clientX - 20).css('top', e.clientY - 10);
-	});
-});
+// $("#banner").on('mousemove', function(e) {
+//     var mouseSide;
+//     if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {
+//         $("#banner").css('cursor', 'url(../../images/icon/arrow-w-l.svg), auto');
+//     } else {
+//         $("#banner").css('cursor', 'url(../../images/icon/arrow-w-l.svg), auto');
+//     }
+// });
+// $(document).ready(function(){
+//   	$('.mask-cursor-left').mouseout(function(){
+//        	$('#mycursor-left').hide();
+//        	return false;
+//   	});
+//   	$('.mask-cursor-left').mouseenter(function(){
+//        	$('#mycursor-left').show();
+//        	return false;
+//   	});
+//   	$('body').mousemove(function(e){
+//        	$('#mycursor-left').css('left', e.clientX - 10).css('top', e.clientY - 10);
+//   	});
+//   	$('#mycursor-left').on( 'scroll', function(){
+// 	   $('#mycursor-left').css('left', e.clientX - 10).css('top', e.clientY - 10);
+// 	});
+// });
+// $(document).ready(function(){
+// 	$('.mask-cursor-right').mouseout(function(){
+// 		$('#mycursor-right').hide();
+// 		return false;
+// 	});
+// 	$('.mask-cursor-right').mouseenter(function(){
+// 		$('#mycursor-right').show();
+// 		return false;
+// 	});
+// 	$('.mask-cursor-right').mousemove(function(e){
+// 		$('#mycursor-right').css('left', e.clientX - 20).css('top', e.clientY - 10);
+// 	});
+// });
 
 
 skel
@@ -442,94 +453,3 @@ var inview = new Waypoint.Inview({
 //     // `event` is a string that tells you what type of event it is.
 //     // in this case it would be 'leave'
 // });
-
-// var cellRatio = 0.6; // outerWidth of cell / width of carousel
-// var bgRatio = 0.8; // width of background layer / width of carousel
-// var fgRatio = 1.25; // width of foreground layer / width of carousel
-
-// $carousel.on( 'scroll.flickity', function( event, progress ) {
-//   moveParallaxLayer( $background, bgRatio, progress );
-//   moveParallaxLayer( $foreground, fgRatio, progress );
-// });
-// // trigger initial scroll
-// $carousel.flickity('reposition');
-
-// var flkty = $carousel.data('flickity');
-// var count = flkty.slides.length - 1;
-
-// function moveParallaxLayer( $layer, layerRatio, progress ) {
-//   var ratio = cellRatio * layerRatio;
-//   $layer.css({
-//     left: ( 0.5 - ( 0.5 + progress * count ) * ratio ) * 100 + '%'
-//   });
-// }
-
-// var $carousel = $('.carousel').flickity({
-//   percentPosition: false,
-// });
-// var flkty = $carousel.data('flickity');
-// var $imgs = $('.carousel-cell');
-
-// $carousel.on( 'scroll.flickity', function( event, progress ) {
-//   flkty.slides.forEach( function( slide, i ) {
-//     var img = $imgs[i];
-//     var x = ( slide.target + flkty.x ) * -1/3;
-//     img.style.transform = 'translateX( ' + x  + 'px)';
-//   });
-// });
-// var $imgs = $carousel.find('.carousel-cell');
-// // get transform property
-// var docStyle = document.documentElement.style;
-// var transformProp = typeof docStyle.transform == 'string' ?
-//   'transform' : 'WebkitTransform';
-// // get Flickity instance
-// var flkty = $carousel.data('flickity');
-
-// $carousel.on( 'scroll.flickity', function() {
-//   flkty.slides.forEach( function( slide, i ) {
-//     var img = $imgs[i];
-//     var x = ( slide.target + flkty.x ) * -1/3;
-//     img.style[ transformProp ] = 'translateX(' + x  + 'px)';
-//   });
-// });
-
-// ScrollMagic --------------------------------
-
-
-// $(function () { // wait for document ready
-// 	// init
-// 	var controller = new ScrollMagic.Controller({
-// 		globalSceneOptions: {
-// 			triggerHook: 'onLeave'
-// 		}
-// 	});
-
-// 	// get all slides
-// 	var slides = document.querySelectorAll("section.panel");
-
-// 	// create scene for every slide
-// 	for (var i=0; i<slides.length; i++) {
-// 		new ScrollMagic.Scene({
-// 				triggerElement: slides[i]
-// 			})
-// 			.setPin(slides[i])
-// 			.addIndicators() // add indicators (requires plugin)
-// 			.addTo(controller);
-// 	}
-// });
-
-// init controller
-// var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 100}});
-
-// // build scenes
-// new ScrollMagic.Scene({triggerElement: "#main"})
-// 	.setClassToggle("#header", "sticky") // add class toggle
-// 	.addIndicators() // add indicators (requires plugin)
-// 	.addTo(controller);
-
-// var controller = new ScrollMagic.Controller();
-// var scene = new ScrollMagic.Scene({triggerElement: "#main"})
-// 	// trigger a velocity opaticy animation
-// 	.setVelocity("#header", {top: 0}, {duration: 400})
-// 	.addIndicators() // add indicators (requires plugin)
-// 	.addTo(controller);
