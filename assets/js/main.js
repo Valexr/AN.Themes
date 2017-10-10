@@ -204,70 +204,21 @@ var $carousel = $('.carousel').flickity({
 	}
 });
 
-// VIEWPORT-WIDTH-HEIGHT ---------------------------
-// global vars
-// var winWidth = $(window).width();
-// var winHeight = $(window).height();
-
-// // set initial div height / width
-// $('.carousel').css({
-//     'width': winWidth,
-// 	'height': winHeight,
-// });
-
-// // make sure div stays full width/height on resize
-// $(window).resize(function(){
-//     $('.carousel').css({
-// 	    'width': winWidth,
-// 	    'height': winHeight,
-// 	});
-// });
+// SKEL-READY ---------------------------
 skel.on("ready", function() {
 	if (!skel.vars.touch) {
 		$('.mask-cursor-right').on( 'click', function() {$carousel.flickity('next');});
 		$('.mask-cursor-left').on( 'click', function() {$carousel.flickity('previous');});
 	};
+
+	// TOUCH-DEVICE-HEGHT
+	if (skel.vars.touch) {
+		$('#banner').css('min-height', window.innerHeight + 'px');
+		$(window).on('resize', function() {
+			$('#banner').css('min-height', window.innerHeight + 'px');
+		})
+	};
 });
-
-// FLICKITY-CUSTOM-CURSOR ----------------------------
-// $("#banner").on('mousemove', function(e) {
-//     var mouseSide;
-//     if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {
-//         $("#banner").css('cursor', 'url(../../images/icon/arrow-w-l.svg), auto');
-//     } else {
-//         $("#banner").css('cursor', 'url(../../images/icon/arrow-w-l.svg), auto');
-//     }
-// });
-// $(document).ready(function(){
-//   	$('.mask-cursor-left').mouseout(function(){
-//        	$('#mycursor-left').hide();
-//        	return false;
-//   	});
-//   	$('.mask-cursor-left').mouseenter(function(){
-//        	$('#mycursor-left').show();
-//        	return false;
-//   	});
-//   	$('body').mousemove(function(e){
-//        	$('#mycursor-left').css('left', e.clientX - 10).css('top', e.clientY - 10);
-//   	});
-//   	$('#mycursor-left').on( 'scroll', function(){
-// 	   $('#mycursor-left').css('left', e.clientX - 10).css('top', e.clientY - 10);
-// 	});
-// });
-// $(document).ready(function(){
-// 	$('.mask-cursor-right').mouseout(function(){
-// 		$('#mycursor-right').hide();
-// 		return false;
-// 	});
-// 	$('.mask-cursor-right').mouseenter(function(){
-// 		$('#mycursor-right').show();
-// 		return false;
-// 	});
-// 	$('.mask-cursor-right').mousemove(function(e){
-// 		$('#mycursor-right').css('left', e.clientX - 20).css('top', e.clientY - 10);
-// 	});
-// });
-
 
 skel
 	.on("ready", function() {
