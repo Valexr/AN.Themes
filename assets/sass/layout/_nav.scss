@@ -14,9 +14,11 @@
 	    left: 0;
 	    background-color: _palette(fg);
 	    opacity: 0;
-	    @include vendor('transition', ('opacity #{_duration(nav)} ease'));
+	    @include vendor('transition', ('opacity #{_duration(nav)} ease-out', 'z-index #{_duration(nav)} ease-in'));
 
-	    &.visible {opacity: 0.7; z-index: _misc(z-index-base) + 1}
+	    &.visible {opacity: 0.7; z-index: _misc(z-index-base) + 1;
+	    	@include vendor('transition', ('all #{_duration(nav)} ease-in-out'));
+	    }
 	}
 	#nav {
 		@include vendor('transform', 'translateX(100%)');
