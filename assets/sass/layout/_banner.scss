@@ -235,7 +235,7 @@
 			    		// @include vendor('transition', 'all #{_duration(transition)} ease-in-out');
 			    		&:hover {
 			    			background-image: url(../../images/icon/ru-w-2.svg); opacity: 1;
-			    			-webkit-font-smoothing: subpixel-antialiased;
+			    			// -webkit-font-smoothing: subpixel-antialiased;
 			    		}
 	    			}
 		    	}
@@ -244,8 +244,15 @@
 	    		color: _palette(bg);
 	    		text-decoration: none;
 	    		font-size: 15px;
+	    		// -webkit-transform: translateZ(0px);
+				// -webkit-backface-visibility: hidden;
+				// -webkit-font-smoothing: subpixel-antialiased
 	    		// @include vendor('transition', 'all #{_duration(transition)} ease-in-out');
-	    		&:hover {-webkit-font-smoothing: subpixel-antialiased;};
+	    		&:hover {
+	    			// -webkit-font-smoothing: subpixel-antialiased;
+	    			-webkit-transform: translateZ(0px);
+	    			-webkit-backface-visibility: hidden;
+	    		};
 	    	}
 	    }
 
