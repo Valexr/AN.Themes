@@ -5,12 +5,11 @@
 	&:nth-of-type(2n+1) {padding-right: 4em;
 		.news-snip-last {left: -4.5em;}
 	}
-	@include breakpoint(xsmall) {padding: 2em 0;
+	@include breakpoint(xsmall) {padding: 2em 0!important;
 		&:nth-of-type(2n) {padding-left: 0;}
 		&:nth-of-type(2n+1) {padding-right: 0;
 			.news-snip-last {left: -20px;}
 		}
-		// img {max-height: 250px;}
 	}
 	&.fit {padding: 8em 0 6em;
 		@include breakpoint(xsmall) {padding: 2em 0}
@@ -69,3 +68,4 @@
 		}
 	}
 }
+.news-more {position: absolute; bottom: 0}

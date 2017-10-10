@@ -50,7 +50,7 @@
 	}
 	a {
 		@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
-		&:hover {opacity: 0.7}
+		&:hover {opacity: 0.7; cursor: pointer;}
 	}
 	#an-backtotop {
 		background-image: url(../../images/icon/up.svg);
