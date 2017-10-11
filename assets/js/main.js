@@ -169,7 +169,7 @@ if ($('body').is('.home-page')) {
 // NOTIFY-CLOSE --------------------------------
 $('.an-notify-close').on( 'click', function() {
 	$('.an-notify').css({'top': '-100px', 'position': 'absolute'});
-})
+});
 // $(window).scroll(function () {
 //     if ($(this).scrollTop() > $(window).height()) {
 //     	$('.an-notify').removeClass('sticky');
@@ -216,41 +216,26 @@ skel.on("ready", function() {
 		$('#banner').css('min-height', window.innerHeight + 'px');
 		$(window).on('resize', function() {
 			$('#banner').css('min-height', window.innerHeight + 'px');
-		})
+			// $(window).scroll(function () {
+		 //    	if ($(this).scrollTop() > 0) {
+
+			//     } else {
+			//     	$('#banner').css('min-height', window.innerHeight + 'px');
+			//     };
+			// });
+		});
 	};
 });
 
-skel
-	.on("ready", function() {
-
-		/* do DOM ready stuff */
-
-		if (skel.breakpoint("small").active) {
-			/* do something specific for small displays */
-		}
-
-		if (skel.vars.touch) {
-			/* enable feature for devices with a touchscreen */
-			// $('body').css('background', 'red');
-			// $carousel.flickity({draggable: true});
-			// $carousel.flickity('bindDrag');
-		}
-
-		if (skel.vars.IEVersion < 9) {
-			/* apply workaround for IE<9 */
-		}
-
-	})
-	.on("+large", function() {
-		/* do something when "large" breakpoint becomes active */
-		$carousel.flickity({draggable: false})
-		// $('body').css('background', 'red')
-	})
-	.on("-large !large", function() {
-		/* do something when "large" breakpoint is (or becomes) inactive */
-		// $carousel.flickity({draggable: true})
-		// $('body').css('background', 'red')
-	});
+// skel
+// 	.on("ready", function() {
+// 		/* do DOM ready stuff */
+// 		if (skel.breakpoint("small").active) {/* do something specific for small displays */}
+// 		if (skel.vars.touch) { enable feature for devices with a touchscreen }
+// 		if (skel.vars.IEVersion < 9) {/* apply workaround for IE<9 */}
+// 	})
+// 	.on("+large", function() {/* do something when "large" breakpoint becomes active */})
+// 	.on("-large !large", function() {/* do something when "large" breakpoint is (or becomes) inactive */});
 
 
 // ARTISTS-HOVER-BACK
@@ -288,12 +273,6 @@ $('.artists-list').each(function() {
 
 
 // ISOTOPE ----------------------------------
-// $('.grid').isotope({
-//   itemSelector: '.grid-item',
-//   layoutMode: 'fitRows'
-//   // ...
-// });
-
 
 // init Isotope
 var $grid = $('.grid').isotope({
@@ -305,7 +284,6 @@ $('.news-tags').on( 'click', 'a', function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
 });
-
 // change is-checked class on buttons
 $('.news-tags').each( function( i, tagsGroup ) {
 	var $tagsGroup = $( tagsGroup );
@@ -328,10 +306,6 @@ $('.news-tags').each( function( i, tagsGroup ) {
 //     return name.match( /ium$/ );
 //   }
 // };
-
-
-
-
 
 // WOW & Animate ----------------------------
 new WOW().init();

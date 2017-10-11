@@ -23,28 +23,22 @@
 	    top: 0px;
 	    left: 0px;
 	    right: 0px;
-        padding: 0 15%;
-	    @include breakpoint(xlarge) {padding: 0 30%}
-	    @include breakpoint(large) {padding: 0 15%}
-	    @include breakpoint(medium) {padding: 0 5%}
+        width: 90%;
+    	margin: auto;
+	    // @include breakpoint(xlarge) {padding: 0 30%}
+	    // @include breakpoint(large) {padding: 0 15%}
+	    // @include breakpoint(medium) {padding: 0 5%}
 	    // @include breakpoint(small) {padding: 0}
-	    @include breakpoint(xsmall) {padding: 0}
+	    @include breakpoint(xsmall) {width: 100%}
 	}
-	.relative {
-	    position: relative;
-	    bottom: auto;
-	    top: auto;
-	    left: 0px;
-	    right: 0px;
-	}
+	.relative {position: relative;}
 	.absolute {
 	    position: absolute;
-	    bottom: -211%;
 	    top: auto;
-	    line-height: normal;
-
+	    line-height: 100vh;
+	    bottom: 0;
 	    // @include breakpoint(large) {bottom: -900px}
-	    @include breakpoint(medium) {bottom: -216%}
+	    // @include breakpoint(medium) {bottom: -216%}
 	    // @include breakpoint(small) {bottom: -850px}
 	    // @include breakpoint(xsmall) {bottom: -750px}
 	}
