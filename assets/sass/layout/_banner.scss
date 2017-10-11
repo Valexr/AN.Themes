@@ -100,8 +100,12 @@
 		@include breakpoint(small) {bottom: 0; padding: 4em; min-height: 240px}
 		@include breakpoint(xsmall) {bottom: 0; padding: 2em 2em 3em; right: 0; left: 0; min-height: 240px}
 	}
-	.banner-footer {position: absolute; width: 100%; bottom: 2em; display: none; z-index: 1;
-    		@include breakpoint(xlarge) {display: block}
+	.banner-footer {position: absolute; width: 100%; bottom: 2em; display: block; z-index: 1;
+    		@include breakpoint(xlarge) {display: none}
+		    @include breakpoint(large) {display: none}
+		    @include breakpoint(medium) {display: none}
+		    @include breakpoint(small) {display: none}
+		    @include breakpoint(xsmall) {display: none}
 	}
 	.banner-social {
 		position: absolute;
