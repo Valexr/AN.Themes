@@ -15,8 +15,10 @@
 		@include breakpoint(xsmall) {padding: 2em 0}
 	}
 	&.hor-image {padding-top: 8.25em;
-		@include breakpoint(xsmall) {padding: 2em 0}
 		.news-snip-last {top: 9.7em;}
+		@include breakpoint(xsmall) {padding: 2em 0;
+			.news-snip-last {top: 90px}
+		}
 	}
 }
 .news {

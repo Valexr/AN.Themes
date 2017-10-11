@@ -3,7 +3,7 @@
 /* Footer */
 
 	#footer {
-		@include padding(4em, 0);
+		@include padding(4em, 4em);
 		h4 {margin: 0;
 			.artists-page & {color: _palette(bg)}
 		}

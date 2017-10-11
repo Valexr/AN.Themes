@@ -9,24 +9,38 @@
 		<link rel="stylesheet" href="assets/css/fonts.css" />
 		<link rel="stylesheet" href="assets/css/animate.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style type="text/css">
+			.no-js #loader { display: none;  }
+			.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+			.se-pre-con {
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				z-index: 9999;
+				background: url(images/Preloader_6.gif) center no-repeat #fff;
+			}
+		</style>
 	</head>
 
 	<body id="top" class="home-page">
-		<div id="mycursor-left"></div>
-		<div id="mycursor-right"></div>
+
+<!-- LOADER -->
+		<div class="an-loader"></div>
 <!-- NOTIFY -->
 		<div class="12u an-notify">
 			<p>20 сентября галерея будет закрыта. Приносим извинения за доставленные неудобства.</p>
 			<a href="#" class="an-notify-close" tabindex="0"></a>
 		</div>
-
 <!-- HEADER -->
 		<header id="header" class="">
-			<div class="lg"><a href="index.html"></a></div>
+			<a class="lg"></a>
 			<a href="#nav" id="header-nav"></a>
 		</header>
 <!-- NAV -->
 		<nav id="nav">
+			<a class="lg" href="index.html"></a>
 			<ul class="links align-right">
 				<li><a href="artists.html">ARTISTS</a></li>
 				<li><a>EXHIBITIONS</a></li>
@@ -46,8 +60,7 @@
 			</ul>
 			<p>
 				<a><i class="fa fa-map-marker" aria-hidden="true"></i>Zhukovskogo St., 28</a>
-				<strong>Tue - Sat</strong><br>
-				12:00 – 19:00
+				<span><strong>Tue - Sat</strong><br>12:00 – 19:00</span>
 			</p>
 		</nav>
 		<div id="nav-mask"></div>
@@ -100,7 +113,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="carousel-cell" style="background-image: url(images/1.jpg)">
+				<!-- <div class="carousel-cell" style="background-image: url(images/1.jpg)"> -->
+				<div class="carousel-cell" data-flickity-bg-lazyload="images/1.jpg">
 					<div class="banner-title">
 						<hr class="bold -5u 7u -9u(xlarge) 3u(xlarge) align-right">
 						<h2><a href="">Street art by STAS BAGS<br>14.08−5.09</a></h2>
@@ -109,7 +123,8 @@
 					<div class="mask-cursor-right"></div>
 					<div class="banner-mask"></div>
 				</div>
-				<div class="carousel-cell" style="background-image: url(images/2.jpg)">
+				<!-- <div class="carousel-cell" style="background-image: url(images/2.jpg)"> -->
+				<div class="carousel-cell" data-flickity-bg-lazyload="images/2.jpg">
 					<div class="banner-title">
 						<hr class="bold -5u 7u -9u(xlarge) 3u(xlarge) align-right">
 						<h2><a href="">Pavel Brat. Paper art<br>7.06−1.09</a></h2>
@@ -118,7 +133,8 @@
 					<div class="mask-cursor-right"></div>
 					<div class="banner-mask"></div>
 				</div>
-				<div class="carousel-cell" style="background-image: url(images/3.jpg)">
+				<!-- <div class="carousel-cell" style="background-image: url(images/3.jpg)"> -->
+				<div class="carousel-cell" data-flickity-bg-lazyload="images/3.jpg">
 					<div class="banner-title">
 						<hr class="bold -5u 7u -9u(xlarge) 3u(xlarge) align-right">
 						<h2><a href="">Robert Longo<br>7.06−1.09</a></h2>
@@ -136,7 +152,7 @@
 			<a id="an-backtotop" onclick="$('#top').animatescroll();"></a>
 
 <!-- MANIFEST -->
-			<section class="panel manifest row 0% 100vh">
+			<section class="panel manifest row 0% vh">
 				<div class="manifest-slogan 12u$ align-center">
 					<h2>Making money is an art, work is also an art, and good business is the best art<br><br>Andy Warhol</h2>
 				</div>
@@ -437,27 +453,29 @@
 			</section>
 
 			<hr class="trans" />
-<!-- FOOTER -->
-			<footer id="footer">
-				<div class="row 0%">
-					<div class="4u 12u(xsmall) fit align-left(">
-						<h4>PARTNERSHIP</h4>
-						<p><a href="">For collectors, designers, museums, etc.</a></p>
-					</div>
-					<div class="4u 12u(xsmall) align-center">
-						<h4>CONTACT US</h4>
-						<p><a href="tel:+7(812)275-97-62">+7 (812) 275-97-62</a></p>
-					</div>
-					<div class="4u 12u(xsmall) align-right">
-						<div class="email-us">
-							<h4>EMAIL US</h4>
-							<p><a href="mailto:info@annanova-gallery.ru">info@annanova-gallery.ru</a></p>
-						</div>
-					</div>
-					<div class="12u copyright">© 2017 Anna Nova Gallery</div>
-				</div>
-			</footer>
+
 		</div>
+
+<!-- FOOTER -->
+		<footer id="footer">
+			<div class="row 0%">
+				<div class="4u 12u(xsmall) fit align-left(">
+					<h4>PARTNERSHIP</h4>
+					<p><a href="">For collectors, designers, museums, etc.</a></p>
+				</div>
+				<div class="4u 12u(xsmall) align-center">
+					<h4>CONTACT US</h4>
+					<p><a href="tel:+7(812)275-97-62">+7 (812) 275-97-62</a></p>
+				</div>
+				<div class="4u 12u(xsmall) align-right">
+					<div class="email-us">
+						<h4>EMAIL US</h4>
+						<p><a href="mailto:info@annanova-gallery.ru">info@annanova-gallery.ru</a></p>
+					</div>
+				</div>
+				<div class="12u copyright">© 2017 Anna Nova Gallery</div>
+			</div>
+		</footer>
 
 <!-- SCRIPTS -->
 
@@ -479,12 +497,12 @@
 
 		<!-- ANIMATESCROLL -->
 		<script src="assets/js/animatescroll/animatescroll.min.js"></script>
-		<script src="assets/js/animatescroll/animatescroll.noeasing.js"></script>
+		<!-- <script src="assets/js/animatescroll/animatescroll.noeasing.js"></script> -->
 
 		<!-- WAYPOINT -->
 		<script type="text/javascript" src="assets/js/waypoint/noframework.waypoints.min.js"></script>
-		<script type="text/javascript" src="assets/js/waypoint/jquery.waypoints.min.js"></script>
-		<script type="text/javascript" src="assets/js/waypoint/shortcuts/sticky.min.js"></script>
+		<!-- <script type="text/javascript" src="assets/js/waypoint/jquery.waypoints.min.js"></script> -->
+		<!-- <script type="text/javascript" src="assets/js/waypoint/shortcuts/sticky.min.js"></script> -->
 		<script type="text/javascript" src="assets/js/waypoint/shortcuts/inview.min.js"></script>
 
 		<!-- ONSCREEN -->

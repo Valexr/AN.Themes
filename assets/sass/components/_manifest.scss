@@ -6,7 +6,7 @@
 		&.stuck h2 {max-width: 75%}
 	}
 	.image {
-	&.first-child {position: absolute; left: 50%; margin-left: -90px; top: 105%;
+		&.first-child {position: absolute; left: 50%; margin-left: -90px; top: 105%;
 			@include breakpoint(xsmall) {}
 		}
 		&.second-child {position: absolute; padding: 3em; left: 0; top: 180%;

@@ -106,6 +106,14 @@
 					}
 				});
 
+			// Prevent scroll Body if Nav is opened
+				var tempScrollTop = null;
+    			tempScrollTop = $(window).scrollTop();
+    			$(window).scrollTop(tempScrollTop);
+				$nav.addEventListener('touchmove', function(e) {
+			       e.preventDefault();
+			    }, false);
+
 })();
 
 // // STIKY ----------------------------------
@@ -191,41 +199,54 @@ var $carousel = $('.carousel').flickity({
 	prevNextButtons: false,
 	imagesLoaded: true,
 	wrapAround: true,
-	bgLazyLoad: true,
+	bgLazyLoad: 1,
 	contain: true,
 	setGallerySize: false,
 	// draggable: false,
 	// watchCSS: true
-	arrowShape: {
-		x0: 10,
-		x1: 60, y1: 50,
-		x2: 65, y2: 50,
-		x3: 15
-	}
+	// arrowShape: {
+	// 	x0: 10,
+	// 	x1: 60, y1: 50,
+	// 	x2: 65, y2: 50,
+	// 	x3: 15
+	// }
 });
+
+skel.on("load", function() {
+	$(".an-loader").fadeOut("slow");
+});
+
+skel.on("change", function() {
+	if (!skel.vars.touch) {
+		// $carousel.flickity({draggable: false});
+	};
+	if (skel.vars.touch) {
+		$('#banner').css('min-height', window.innerHeight + 'px');
+	};
+});
+
 
 // SKEL-READY ---------------------------
 skel.on("ready", function() {
 	if (!skel.vars.touch) {
-		$('.mask-cursor-right').on( 'click', function() {$carousel.flickity('next');});
-		$('.mask-cursor-left').on( 'click', function() {$carousel.flickity('previous');});
+		$('.mask-cursor-right').on( 'click', function() {$carousel.flickity('next')});
+		$('.mask-cursor-left').on( 'click', function() {$carousel.flickity('previous')});
+		$carousel.flickity({draggable: false});
 	};
 
 	// TOUCH-DEVICE-HEGHT
-	if (skel.vars.touch) {
-		$('#banner').css('min-height', window.innerHeight + 'px');
-		$(window).on('resize', function() {
-			$('#banner').css('min-height', window.innerHeight + 'px');
-			// $(window).scroll(function () {
-		 //    	if ($(this).scrollTop() > 0) {
-
-			//     } else {
-			//     	$('#banner').css('min-height', window.innerHeight + 'px');
-			//     };
-			// });
-		});
-	};
+	// if (skel.vars.touch) {
+	// 	$('#banner').css('min-height', window.innerHeight + 'px');
+	// 	$(window).on('resize', function() {
+	// 		$(window).scroll(function () {
+	// 	    	if ($(this).scrollTop() > 0) { } else {
+	// 		    	$('#banner').css('min-height', window.innerHeight + 'px');
+	// 		    };
+	// 		});
+	// 	});
+	// };
 });
+
 
 // skel
 // 	.on("ready", function() {
