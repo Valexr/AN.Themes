@@ -7,11 +7,12 @@
 	height: 80px;
     left: 2.5em;
 	position: absolute;
+    cursor: pointer;
 	@include vendor('transition', 'all #{_duration(nav)} ease-in-out');
 	@include breakpoint(small) {left: 1.5em;}
 	@include breakpoint(xsmall) {left: 0.5em}
 	.artists-page & {background-image: url(../../images/icon/logo-w.svg);}
     #nav & {width: 120px; height: 120px; top: 1em;}
 
-	a {display: block; width: 80px; height: 80px; cursor: pointer}
+	a {display: block;}
 }
