@@ -9,7 +9,7 @@
     &-white {@extend .lg; background-image: url(../../images/icon/logo-w.svg);}
     &-black {@extend .lg; background-image: url(../../images/icon/logo-b.svg);}
 
-    #banner & {width: 125px; height: 125px; float: left; padding-top: 150px;}
+    #banner & {width: 125px; height: 125px; float: left; padding-top: 125px;}
     #nav & {top: 2em;}
     #header & {background-size: 60%; left: 2.5em;
         @include breakpoint(small) {left: 1.5em; opacity: 0}
