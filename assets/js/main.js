@@ -116,6 +116,12 @@
 
 })();
 
+// LOADER ------------------------------------
+skel.on("load", function() {
+	$(".an-loader").fadeOut("slow");
+});
+
+
 // // STIKY ----------------------------------
 $(window).scroll(function () {
 
@@ -212,10 +218,6 @@ var $carousel = $('.carousel').flickity({
 	// 	x2: 65, y2: 50,
 	// 	x3: 15
 	// }
-});
-
-skel.on("load", function() {
-	$(".an-loader").fadeOut("slow");
 });
 
 skel.on("change", function() {

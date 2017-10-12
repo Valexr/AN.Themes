@@ -70,14 +70,14 @@
 	    @include vendor('transition', 'bottom #{_duration(transition)} ease-in-out');
 	    &:hover {cursor: pointer}
 	}
-	.no-js #loader { display: none;  }
-	.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-	.an-loader {
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-		height: 100%;
-		z-index: 109999;
-		background: url(../../images/Preloader_6.gif) center no-repeat #fff;
-	}
+	// .no-js #loader { display: none;  }
+	// .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+	// .an-loader {
+	// 	position: fixed;
+	// 	left: 0px;
+	// 	top: 0px;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	z-index: 109999;
+	// 	background: url(../../images/Preloader_6.gif) center no-repeat #fff;
+	// }
