@@ -1,8 +1,8 @@
 .news-snip {
 	box-sizing: border-box;
 	position: relative;
-	&:nth-of-type(2n) {padding-left: 4em;}
-	&:nth-of-type(2n+1) {padding-right: 4em;
+	&:nth-of-type(2n) {padding-left: 5em;}
+	&:nth-of-type(2n+1) {padding-right: 5em;
 		.news-snip-last {left: -4.5em;}
 	}
 	@include breakpoint(xsmall) {padding: 2em 0!important;
@@ -53,7 +53,7 @@
 	    height: 20px;
 	    display: inline-block;
 	    position: absolute;
-	    left: -1em;
+	    left: 0;
 	    top: 37px;
 	    font-family: _font(family-bold);
 	    font-size: 15px;
@@ -72,4 +72,4 @@
 		}
 	}
 }
-.news-more {position: absolute; bottom: 0}
+.news-more {padding-top: 3em}

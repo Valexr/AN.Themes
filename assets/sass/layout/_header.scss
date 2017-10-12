@@ -23,24 +23,6 @@
 		}
 		.news-page &, .artists-page & {top: 0}
 		.artists-page & {background-color: transparent}
-		#header-nav {}
-
-		.lg {
-	    	background-image: url(../../images/icon/logo-b.svg);
-	    	background-position: center;
-	    	background-size: 60%;
-	    	background-repeat: no-repeat;
-    	    width: 80px;
-    		height: 80px;
-		    left: 2.5em;
-    		position: absolute;
-    		@include vendor('transition', 'all #{_duration(nav)} ease-in-out');
-    		@include breakpoint(small) {left: 1.5em; opacity: 0}
-    		@include breakpoint(xsmall) {left: 0.5em}
-    		.artists-page & {background-image: url(../../images/icon/logo-w.svg);}
-
-    		a {display: block; width: 80px; height: 80px; cursor: pointer}
-    	}
 
 		> h1 {
 			color: _palette(fg);

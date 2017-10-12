@@ -6,9 +6,9 @@
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link href="../apple-touch-icon.png" rel="apple-touch-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/fonts.css" />
 		<link rel="stylesheet" href="assets/css/animate.min.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
 		<style type="text/css">
 			.no-js #loader { display: none;  }
 			.js #loader { display: block; position: absolute; left: 100px; top: 0; }
@@ -28,19 +28,22 @@
 
 <!-- LOADER -->
 		<div class="an-loader"></div>
+
 <!-- NOTIFY -->
 		<div class="12u an-notify">
 			<p>20 сентября галерея будет закрыта. Приносим извинения за доставленные неудобства.</p>
 			<a href="#" class="an-notify-close" tabindex="0"></a>
 		</div>
+
 <!-- HEADER -->
 		<header id="header" class="">
-			<a class="lg"></a>
+			<a id="an-backtotop" class="lg-black" href="index.html" onclick="$('#top').animatescroll();"></a>
 			<a href="#nav" id="header-nav"></a>
 		</header>
+
 <!-- NAV -->
 		<nav id="nav">
-			<a class="lg" href="index.html"></a>
+			<a class="lg-black" href="index.html"></a>
 			<ul class="links align-right">
 				<li><a href="artists.html">ARTISTS</a></li>
 				<li><a>EXHIBITIONS</a></li>
@@ -71,7 +74,7 @@
 			<div class="carousel">
 
 				<div class="static-banner-logo">
-					<div class="lg">
+					<div class="lg-white">
 						<div id="lg-desc">
 							<p>
 								<strong>Anna Nova Gallery<br>
@@ -149,7 +152,7 @@
 <!-- MAIN -->
 		<div id="main" class="container">
 
-			<a id="an-backtotop" onclick="$('#top').animatescroll();"></a>
+			<a id="an-backtotop" class="an-backtotop" onclick="$('#top').animatescroll();"></a>
 
 <!-- MANIFEST -->
 			<section class="panel manifest row 0% vh">

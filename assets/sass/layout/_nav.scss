@@ -22,7 +22,7 @@
 	}
 	#nav {
 		@include vendor('transform', 'translateX(100%)');
-		@include vendor('transition', ('transform #{_duration(nav)} ease', 'box-shadow #{_duration(nav)} ease', 'visibility #{_duration(nav)}'));
+		@include vendor('transition', ('transform #{_duration(nav)} ease', 'visibility #{_duration(nav)}'));
 		-webkit-overflow-scrolling: touch;
 		background: _palette(bg);
 		box-shadow: none;
@@ -58,19 +58,20 @@
 				padding: 0;
 
 				> li {
-					padding: 0;
+					padding: 0; line-height: 3.5em; display: block;
 
 					> a:not(.button) {
 						border: 0;
 						border-top: solid 1px _palette(accent2, border);
 						color: inherit;
-						display: block;
+						display: inline-block;
 						letter-spacing: _size(letter-spacing-alt);
-						line-height: 2.04em;
+						line-height: 1.25em;
 						text-decoration: none;
 						cursor: pointer;
 						font-size: 20px;
 						font-family: _font(family-bold);
+						padding-left: 20px;
 						// @include breakpoint(small) {font-family: _font(family-bold);}
 						// @include breakpoint(xsmall) {font-family: _font(family-bold); font-size: 20px}
 

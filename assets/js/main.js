@@ -131,13 +131,13 @@ $(window).scroll(function () {
 		if ($(this).scrollTop() > $(window).height()) {
 	    	$('header').addClass("sticky");
 	    	// $('.an-notify').removeClass('sticky');
-	    	$('#an-backtotop').css('bottom', '2em');
+	    	$('.an-backtotop').css('bottom', '2em');
 	    	// $('#header-nav').attr('href', '#nav');
 	    	// $('#banner-nav').attr('href', '');
 	    }
 	    else {
 	    	$('header').removeClass("sticky");
-	    	$('#an-backtotop').css('bottom', '-5em');
+	    	$('.an-backtotop').css('bottom', '-5em');
 	    }
 	}
 	// if ($('body').is('.artists-page')) {}
@@ -148,9 +148,11 @@ $(window).scroll(function () {
 		// }
 });
 
+$('#an-backtotop').each(function() {
+	$(this).attr('onclick', '$("#top").animatescroll({scrollSpeed:2000,easing:"easeOutBack"});');
+});
 if ($('body').is('.home-page')) {
-	$('.lg').attr('onclick', '$("#top").animatescroll({scrollSpeed:2000,easing:"easeOutBack"});');
-	$('.lg a').removeAttr('href');
+	$('#an-backtotop').removeAttr('href');
 };
 
 // SCROLLIFY -----------------------------------
@@ -297,13 +299,18 @@ $('.artists-list').each(function() {
 
 // init Isotope
 var $grid = $('.grid').isotope({
-  itemSelector: '.news-snip',
-  layoutMode: 'fitRows'
+	itemSelector: '.news-snip',
+	layoutMode: 'fitRows',
+	percentPosition: true,
+	masonry: {
+		columnWidth: '.grid-sizer',
+		gutter: '.gutter-sizer'
+	},
 });
 // filter items on button click
 $('.news-tags').on( 'click', 'a', function() {
-  var filterValue = $(this).attr('data-filter');
-  $grid.isotope({ filter: filterValue });
+	var filterValue = $(this).attr('data-filter');
+	$grid.isotope({ filter: filterValue });
 });
 // change is-checked class on buttons
 $('.news-tags').each( function( i, tagsGroup ) {

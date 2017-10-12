@@ -4,9 +4,6 @@
 	background-size: cover;
 	text-align: center;
     min-height: 100vh;
-
-    // .is-loading & {display: none;}
-
     .banner-mask {
     	position: absolute;
 	    overflow: hidden;
@@ -154,14 +151,6 @@
 
 
     .lg {
-    	background-image: url(../../images/icon/logo-w.svg);
-    	background-repeat: no-repeat;
-    	background-size: contain;
-	    width: 125px;
-		height: 125px;
-		float: left;
-		padding-top: 150px;
-
 		#lg-desc {text-align: left; width: 150px; position: absolute; line-height: 1.5;
 	    	p {font-size: 1em; margin-bottom: 0.75em; font-family: _font(family-light);
 	    		strong {color: _palette(bg); font-family: _font(family-bold);}
