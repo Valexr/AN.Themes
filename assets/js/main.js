@@ -53,9 +53,9 @@
 			addEventsListener($body, 'click touchend', function(event) {
 				$nav.classList.remove('visible');
 				$navMask.classList.remove('visible');
-				if (!skel.vars.touch) {
+				// if (!skel.vars.touch) {
 					$body.classList.remove('noscroll');
-				};
+				// };
 			});
 
 		// Toggle.
@@ -68,9 +68,9 @@
 
 					$nav.classList.toggle('visible');
 					$navMask.classList.toggle('visible');
-					if (!skel.vars.touch) {
+					// if (!skel.vars.touch) {
 						$body.classList.toggle('noscroll');
-					}
+					// }
 				});
 
 		// Close.
@@ -88,9 +88,9 @@
 					if (event.keyCode == 27)
 						$nav.classList.remove('visible');
 						$navMask.classList.remove('visible');
-						if (!skel.vars.touch) {
+						// if (!skel.vars.touch) {
 							$body.classList.remove('noscroll');
-						}
+						// }
 				});
 
 			// Event: Hide nav on click.
@@ -101,18 +101,18 @@
 
 					$nav.classList.remove('visible');
 					$navMask.classList.remove('visible');
-					if (!skel.vars.touch) {
+					// if (!skel.vars.touch) {
 						$body.classList.remove('noscroll');
-					}
+					// }
 				});
 
 			// Prevent scroll Body if Nav is opened
-				var tempScrollTop = null;
-    			tempScrollTop = $(window).scrollTop();
-    			$(window).scrollTop(tempScrollTop);
-				$nav.addEventListener('touchmove', function(e) {
-			       e.preventDefault();
-			    }, false);
+				// var tempScrollTop = null;
+    // 			tempScrollTop = $(window).scrollTop();
+    // 			$(window).scrollTop(tempScrollTop);
+				// $nav.addEventListener('touchmove', function(e) {
+			 //       e.preventDefault();
+			 //    }, false);
 
 })();
 
@@ -129,9 +129,13 @@ $(window).scroll(function () {
 		$(window).scroll(function () {
 		    if ($(this).scrollTop() > 0) {
 		    	$('header').css('background', 'white');
+		    	$('.an-backtotop').css('bottom', '2em');
 		    	// $('.an-notify').removeClass('sticky');
 		    }
-		    else { $('header').css('background', 'transparent'); }
+		    else {
+		    	$('header').css('background', 'transparent');
+		    	$('.an-backtotop').css('bottom', '-5em');
+		    }
 		});
 	} else {
 		if ($(this).scrollTop() > $(window).height()) {
