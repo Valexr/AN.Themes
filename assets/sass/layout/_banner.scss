@@ -88,15 +88,32 @@
 	    	top: 2em; right: 2em; bottom: 2em; left: 2em;
 	    }
 	}
-	.banner-title {position: absolute; bottom: 5em; z-index: 10; right: 4em;
-		hr {margin-bottom: 1em}
+	.banner-title {position: absolute; bottom: 5em; z-index: 10; right: 4em; padding: 2em 0;
+		&:before {
+			content: '';
+			width: 50%;
+			max-width: 125px;
+			height: 8px;
+			background: _palette(bg);
+			display: inline-block;
+			right: 0;
+			top: 0;
+			position: absolute;
+		}
+		// hr {margin-bottom: 1em; max-width: 125px;
+		// 	@include breakpoint(medium) {}
+		//     @include breakpoint(small) {}
+		//     @include breakpoint(xsmall) {}
+		// }
 		h2 {line-height: 1.25em;
 			a {
 				&:hover {cursor: pointer; opacity: 0.7}
 			}
 		}
-		@include breakpoint(small) {bottom: 0; padding: 4em; min-height: 240px}
-		@include breakpoint(xsmall) {bottom: 0; padding: 2em 2em 3em; right: 0; left: 0; min-height: 240px}
+		// @include breakpoint(small) {bottom: 0; padding: 4em; min-height: 240px}
+		@include breakpoint(xsmall) {bottom: 0; padding: 2em 2em 3em; right: 0; left: 0; min-height: 240px;
+			&:before {right: 2em}
+		}
 	}
 	.banner-footer {position: absolute; width: 100%; bottom: 2em; display: block; z-index: 1;
     		@include breakpoint(xlarge) {display: none}

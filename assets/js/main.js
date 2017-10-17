@@ -18,10 +18,10 @@
 
 	// Breakpoints.
 		skel.breakpoints({
-			xlarge:	'(max-width: 1680px)',
+			xlarge:	'(max-width: 1920px)',
 			large:	'(max-width: 1280px)',
-			medium:	'(max-width: 980px)',
-			small:	'(max-width: 736px)',
+			medium:	'(max-width: 1024px)',
+			small:	'(max-width: 768px)',
 			xsmall:	'(max-width: 480px)'
 		});
 
@@ -188,7 +188,7 @@ if ($('body').is('.home-page')) {
 
 // NOTIFY-CLOSE --------------------------------
 $('.an-notify-close').on( 'click', function() {
-	$('.an-notify').css({'top': '-100px', 'position': 'absolute'});
+	$('.an-notify').removeClass('visible');
 });
 // $(window).scroll(function () {
 //     if ($(this).scrollTop() > $(window).height()) {
@@ -205,7 +205,7 @@ var $carousel = $('.carousel').flickity({
 	cellSelector: '.carousel-cell',
 	// selectedAttraction: 0.01,
 	// friction: 0.15,
-	autoPlay: 10000,
+	// autoPlay: 10000,
 	pauseAutoPlayOnHover: false,
 	// freeScroll: true,
 	prevNextButtons: false,
@@ -228,9 +228,14 @@ skel.on("change", function() {
 	if (!skel.vars.touch) {
 		// $carousel.flickity({draggable: false});
 	};
-	if (skel.vars.touch) {
-		$('#banner').css('min-height', window.innerHeight + 'px');
-	};
+	// if (skel.vars.touch) {
+	// 	$('#banner').css('min-height', window.innerHeight + 'px');
+	// 	if ($('.an-notify').hasClass('visible')) {
+	// 		$('#header').css('top', 'auto');
+	// 	} else {
+	// 		$('#header').css('top', '0');
+	// 	}
+	// };
 });
 
 
@@ -244,14 +249,11 @@ skel.on("ready", function() {
 
 	// TOUCH-DEVICE-HEGHT
 	// if (skel.vars.touch) {
-	// 	$('#banner').css('min-height', window.innerHeight + 'px');
-	// 	$(window).on('resize', function() {
-	// 		$(window).scroll(function () {
-	// 	    	if ($(this).scrollTop() > 0) { } else {
-	// 		    	$('#banner').css('min-height', window.innerHeight + 'px');
-	// 		    };
-	// 		});
-	// 	});
+	// 	if ($('.an-notify').hasClass('visible')) {
+	// 		$('#header').css('top', 'auto');
+	// 	} else {
+	// 		$('#header').css('top', '0');
+	// 	}
 	// };
 });
 
@@ -263,7 +265,20 @@ skel.on("ready", function() {
 // 		if (skel.vars.touch) { enable feature for devices with a touchscreen }
 // 		if (skel.vars.IEVersion < 9) {/* apply workaround for IE<9 */}
 // 	})
-// 	.on("+large", function() {/* do something when "large" breakpoint becomes active */})
+	// .on("+medium", function() {
+	// 	// if ($('.an-notify').hasClass('visible')) {
+	// 		$('#header').css('top', '-100px');
+	// 	// } else {
+	// 		// $('#header').css('top', '0');
+	// 	// }
+	// })
+	// .on("+small", function() {
+	// 	if ($('.an-notify').hasClass('visible')) {
+	// 		$('#header').css('top', '3.5em');
+	// 	} else {
+	// 		$('#header').css('top', '0');
+	// 	}
+	// })
 // 	.on("-large !large", function() {/* do something when "large" breakpoint is (or becomes) inactive */});
 
 

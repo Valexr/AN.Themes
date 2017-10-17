@@ -14,7 +14,7 @@
 		text-align: right;
 		top: -100px;
 		width: 100%;
-		z-index: 100;
+		z-index: 10;
 		@include vendor('transition', 'all #{_duration(nav)} ease-in-out');
 		@include breakpoint(small) {top: 0;}
 		&.sticky {background: _palette(bg);
@@ -63,7 +63,7 @@
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
 				&:hover {opacity: 0.7}
 				@include breakpoint(small) {right: 2.5em;}
-				@include breakpoint(xsmall) {right: 1.5em}
+				@include breakpoint(xsmall) {right: 2em}
 				.artists-page & {background-image: url(../../images/icon/burger-w.svg);}
 			}
 
